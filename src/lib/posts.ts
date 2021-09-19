@@ -12,6 +12,7 @@ type MatterResult = {
         id: string
         title: string
         published: string
+        publishedIndex: number
     }
 }
 
@@ -20,6 +21,7 @@ export type Post = {
     id: string
     title: string
     published: string
+    publishedIndex: number
 }
 
 const POSTS_DIRECTORIES = path.join(process.cwd(), 'posts')
@@ -54,6 +56,8 @@ export function getAllPostIds() {
 export function getSortedPostsData() {
     return ALL_POSTS.sort((a, b) => {
         if (a.published < b.published) {
+            return 1
+        } else if (a.published == b.published && a.publishedIndex < b.publishedIndex) {
             return 1
         } else {
             return -1
