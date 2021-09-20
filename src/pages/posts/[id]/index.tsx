@@ -27,8 +27,8 @@ const PostPage = ({
                 <meta name="og:title" content="ぽんブログ" />
                 <title>{title} - ぽんブログ</title>
             </Head>
+            <div className={styles.published}>{published}</div>
             <h1 className={styles.title}>{title}</h1>
-            <p className={styles.published}>{published}</p>
             <div dangerouslySetInnerHTML={{ __html: content }} />
         </>
     )
