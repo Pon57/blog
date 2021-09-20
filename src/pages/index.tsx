@@ -23,9 +23,11 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                     <article key={post.id} className={styles.article}>
                         <Link href="./posts/[id]" as={`./posts/${post.id}`}>
                             <a>
-                                <h1>{post.title}</h1>
-                                <p className={styles.content}>{post.content}</p>
-                                <p className={styles.published}>{post.published}</p>
+                                <div>
+                                    <h1>{post.title}</h1>
+                                    <p className={styles.content}>{post.content}</p>
+                                    <p className={styles.published}>{post.published}</p>
+                                </div>
                             </a>
                         </Link>
                     </article>

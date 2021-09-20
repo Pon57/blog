@@ -2,7 +2,6 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    padding: 0 20px;
     font-size: small;
     text-decoration: none;
     color: black;
@@ -15,11 +14,15 @@
 }
 
 .article {
-    width: 90%;
-    margin: 20px auto;
+    margin: auto;
     font-size: large;
 }
 
 .article a {
+    text-decoration: none;
+}
+
+.article h1 {
+    margin: 0;
     text-decoration: none;
 }
