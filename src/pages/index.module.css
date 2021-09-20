@@ -1,6 +1,25 @@
-.heading {
-    padding: 16px;
-    color: steelblue;
-    font-size: 24px;
-    font-weight: bold;
+.content {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 20px;
+    font-size: small;
+    text-decoration: none;
+    color: black;
+}
+
+.published {
+    text-align: right;
+    font-size: xx-small;
+    color: black;
+}
+
+.article {
+    width: 90%;
+    margin: 20px auto;
+    font-size: large;
+}
+
+.article a {
+    text-decoration: none;
 }
