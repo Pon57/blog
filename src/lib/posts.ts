@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { unified } from 'unified'
 import markdown from 'remark-parse'
+import slug from 'rehype-slug'
 import remark2rehype from 'remark-rehype'
 import stringify from 'rehype-stringify'
 
@@ -72,6 +73,7 @@ export async function getPostData(id: string): Promise<Post> {
     const processedContent = await unified()
         .use(markdown)
         .use(remark2rehype)
+        .use(slug)
         .use(stringify)
         .process(post.content)
     const content = processedContent.toString()
