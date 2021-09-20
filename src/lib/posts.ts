@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { unified } from 'unified'
 import remarkBreaks from 'remark-breaks'
 import remarkExternalLinks from 'remark-external-links'
+import highlight from 'rehype-highlight'
 import markdown from 'remark-parse'
 import slug from 'rehype-slug'
 import remark2rehype from 'remark-rehype'
@@ -77,6 +78,7 @@ export async function getPostData(id: string): Promise<Post> {
         .use(remarkBreaks)
         .use(remarkExternalLinks)
         .use(remark2rehype)
+        .use(highlight)
         .use(slug)
         .use(stringify)
         .process(post.content)
