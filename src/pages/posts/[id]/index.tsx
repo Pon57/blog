@@ -16,7 +16,11 @@ export const getStaticProps: GetStaticProps<Post, { id: string }> = async contex
     return { props: data }
 }
 
-const PostPage = ({ title, content, published }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const PostPage = ({
+    title,
+    content,
+    published,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
             <Head>
