@@ -1,3 +1,8 @@
+.site {
+    max-width: 1000px;
+    margin: auto;
+}
+
 .content {
     margin: 0 10px;
 }
