@@ -81,16 +81,16 @@ iOSDC Japan に関しては 2020 から参加しており、同主催の PHPerKa
 オンラインはタイムシフトがあるので助かります。自分はニコニコ動画のプレミアム会員なので、タイムシフト予約無しで1ヶ月間見放題！
 
 - [iOS・Androidで使えるデザインシステムをどう実装するか](https://fortee.jp/iosdc-japan-2021/proposal/ddb7719b-3440-46ee-8a58-0d8a163bc6f8)(day0 Track C)
-- [機能ごとに動作するミニアプリでプレビューサイクルを爆速にした話](https://fortee.jp/iosdc-japan-2021/proposal/6b6fb68b-a45a-4878-a8b9-0dd5ed90fc39)(day1 Track C)
 - [実践 iOS オープンソースプロジェクトの始め方](https://fortee.jp/iosdc-japan-2021/proposal/5a93e99d-159a-4fde-aab8-5ca14ed4ae76)(day1 Track A)
 - [宣言的UIの状態管理とアーキテクチャ - SwiftUIとGraphQLによる実践](https://fortee.jp/iosdc-japan-2021/proposal/a85bf338-ae84-4ad0-ab12-8c02afc6e40c)(day1 Track B)
-- [僕たちが『Appのプライバシーに関する質問への回答』そして『ATT』に対応するまでの物語](https://fortee.jp/iosdc-japan-2021/proposal/cb27f5b5-dd66-47ee-a224-afcc97d979b6)(day1 Track D)
+- [機能ごとに動作するミニアプリでプレビューサイクルを爆速にした話](https://fortee.jp/iosdc-japan-2021/proposal/6b6fb68b-a45a-4878-a8b9-0dd5ed90fc39)(day1 Track C)
 - [歴史のある大規模アプリに Design System を導入して開発をスケールさせる](https://fortee.jp/iosdc-japan-2021/proposal/be2d5c5b-aaf4-475e-8c76-b68d589ffb6f)(day1 Track C)
+- [僕たちが『Appのプライバシーに関する質問への回答』そして『ATT』に対応するまでの物語](https://fortee.jp/iosdc-japan-2021/proposal/cb27f5b5-dd66-47ee-a224-afcc97d979b6)(day1 Track D)
 - [iOSエンジニアがKMPで大規模アプリのロジック共通化をしてうまくできている話](https://fortee.jp/iosdc-japan-2021/proposal/6d170404-d2b6-4379-ad9e-19e304eb7a31)(day1 Track D)
 - [UITestを活用しまだまだ不安定なSwiftUIアプリを安定的に実務運用する方法](https://fortee.jp/iosdc-japan-2021/proposal/72a9c9f1-7440-40a6-84c1-37102909d045)(day1 Track E)
-- [元ゲーム開発者が贈る描画パフォーマンス改善](https://fortee.jp/iosdc-japan-2021/proposal/ddf82e43-3c73-43ee-b647-bed6ac48c834)(day2 Track E)
 - [iOSアプリのセキュリティ基礎](https://fortee.jp/iosdc-japan-2021/proposal/f4eeade3-e50b-4a49-91dc-22bbba321ecb)(day2 Track A)
 - [オフライン編集もできる複雑なデータ構造を端末間で同期するために](https://fortee.jp/iosdc-japan-2021/proposal/de41bc2f-f910-46ee-be0d-1d7dedb89649)(day2 Track D)
+- [元ゲーム開発者が贈る描画パフォーマンス改善](https://fortee.jp/iosdc-japan-2021/proposal/ddf82e43-3c73-43ee-b647-bed6ac48c834)(day2 Track E)
 
 (まだ増えるかも)
 
