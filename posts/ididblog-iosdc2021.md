@@ -6,7 +6,7 @@ publishedIndex: 1
 ---
 
 初の iOSDC Japan 参加記であり、初のカンファレンス参加記です。 :tada: [iOSDC Japan 2021](https://iosdc.jp/2021/)
-iOSDC Japan に関しては 2020 から参加しており、同主催の PHPerKaigi では 2019 から毎年参加しています。
+iOSDC Japan に関しては 2020 から参加しており、主催（実行委員長？）の方が同じ PHPerKaigi では 2019 から毎年参加しています。
 いつも iwillblog を無視し続けている感じになっていたので、今回こそは！！！という感じです。
 
 ということで書く為にこのブログを[作りました](/posts/create-a-blog)。作り始めたのは iOSDC Japan 2021 最終日の最中です。（急にモチベが湧いた）
