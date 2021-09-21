@@ -5,10 +5,12 @@ import 'public/styles.css'
 import 'highlight.js/styles/github.css'
 import styles from './_app.module.css'
 import Link from 'next/link'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
+            <GoogleAnalytics />
             <div className={styles.site}>
                 <header className={styles.heading}>
                     <Link href="/">
