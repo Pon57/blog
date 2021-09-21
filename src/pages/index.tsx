@@ -16,6 +16,7 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <>
             <Head>
                 <meta name="og:title" content="ぽんブログ" />
+                <meta property="og:type" content="website" />
                 <title>ぽんブログ</title>
             </Head>
             <div>

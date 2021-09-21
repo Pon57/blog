@@ -24,7 +24,8 @@ const PostPage = ({
     return (
         <>
             <Head>
-                <meta name="og:title" content="ぽんブログ" />
+                <meta name="og:title" content={title + ` - ぽんブログ `} />
+                <meta property="og:type" content="article" />
                 <title>{title} - ぽんブログ</title>
             </Head>
             <div className={styles.published}>{published}</div>

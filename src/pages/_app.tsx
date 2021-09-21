@@ -5,12 +5,20 @@ import 'public/styles.css'
 import 'highlight.js/styles/github.css'
 import styles from './_app.module.css'
 import Link from 'next/link'
+import Head from 'next/head'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { useEffect } from 'react'
 
 export default function App({ Component, pageProps }: AppProps) {
+    useEffect(() => {
+        document.documentElement.setAttribute('prefix', 'og: http://ogp.me/ns#')
+    })
     return (
         <>
             <GoogleAnalytics />
+            <Head>
+                <meta property="og:site_name" content="ぽんブログ" />
+            </Head>
             <div className={styles.site}>
                 <header className={styles.heading}>
                     <Link href="/">
