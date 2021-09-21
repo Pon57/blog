@@ -39,12 +39,12 @@ blockquote {
     background: #efefef;
     color: #555;
 }
-blockquote:before{
+blockquote:before {
     display: inline-block;
     position: absolute;
     top: 5px;
     left: 3px;
-    content: "“";
+    content: '“';
     color: #cfcfcf;
     font-size: 90px;
     line-height: 1;
