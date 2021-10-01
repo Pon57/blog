@@ -1,24 +1,20 @@
 import { InferGetStaticPropsType, GetStaticProps } from 'next'
-import Head from 'next/head'
 import Link from 'next/link'
 import { getSortedPostsData } from '@/lib/posts'
 import styles from './index.module.css'
+import Meta from '@/components/Meta'
 
 export const getStaticProps: GetStaticProps<{
     posts: ReturnType<typeof getSortedPostsData>
 }> = async () => {
-    const posts = await getSortedPostsData()
+    const posts = getSortedPostsData()
     return { props: { posts } }
 }
 
 const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
-            <Head>
-                <meta name="og:title" content="ぽんブログ" />
-                <meta property="og:type" content="website" />
-                <title>ぽんブログ</title>
-            </Head>
+            <Meta />
             <div>
                 {posts.map(post => (
                     <article key={post.id} className={styles.article}>

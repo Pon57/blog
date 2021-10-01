@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { getPostData, getAllPostIds, Post } from '@/lib/posts'
-import Head from 'next/head'
 import styles from './index.module.css'
+import Meta from '@/components/Meta'
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const ids = await getAllPostIds()
@@ -23,11 +23,7 @@ const PostPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
-            <Head>
-                <meta name="og:title" content={title + ` - ぽんブログ `} />
-                <meta property="og:type" content="article" />
-                <title>{title} - ぽんブログ</title>
-            </Head>
+            <Meta title={title} type='article' />
             <div className={styles.published}>{published}</div>
             <h1 className={styles.title}>{title}</h1>
             <div dangerouslySetInnerHTML={{ __html: content }} />

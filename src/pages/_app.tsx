@@ -16,9 +16,6 @@ export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
             <GoogleAnalytics />
-            <Head>
-                <meta property="og:site_name" content="ぽんブログ" />
-            </Head>
             <div className={styles.site}>
                 <header className={styles.heading}>
                     <Link href="/">
