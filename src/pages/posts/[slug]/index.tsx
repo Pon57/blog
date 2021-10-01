@@ -23,7 +23,7 @@ const PostPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
-            <Meta title={title} type='article' />
+            <Meta title={title} type="article" />
             <div className={styles.published}>{published}</div>
             <h1 className={styles.title}>{title}</h1>
             <div dangerouslySetInnerHTML={{ __html: content }} />
