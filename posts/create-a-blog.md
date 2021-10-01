@@ -1,5 +1,5 @@
 ---
-id: 'create-a-blog'
+slug: 'create-a-blog'
 title: 'ブログをとりあえず作った話'
 published: '2021-09-21'
 publishedIndex: 0

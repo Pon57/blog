@@ -1,18 +1,18 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
-import { getPostData, getAllPostIds, Post } from '@/lib/posts'
+import { getPostData, getAllPostSlugs, Post } from '@/lib/posts'
 import styles from './index.module.css'
 import Meta from '@/components/Meta'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const ids = await getAllPostIds()
+    const ids = await getAllPostSlugs()
     return {
-        paths: ids.map(id => ({ params: { id } })),
+        paths: ids.map(slug => ({ params: { slug } })),
         fallback: false,
     }
 }
 
-export const getStaticProps: GetStaticProps<Post, { id: string }> = async context => {
-    const data = await getPostData((context.params || {}).id as string)
+export const getStaticProps: GetStaticProps<Post, { slug: string }> = async context => {
+    const data = await getPostData((context.params || {}).slug as string)
     return { props: data }
 }
 

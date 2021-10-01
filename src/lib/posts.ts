@@ -2,19 +2,19 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { unified } from 'unified'
-import remarkBreaks from 'remark-breaks'
-import remarkExternalLinks from 'remark-external-links'
-import highlight from 'rehype-highlight'
-import emoji from 'remark-emoji'
-import markdown from 'remark-parse'
-import slug from 'rehype-slug'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeSlug from 'rehype-slug'
+import rehypeStringify from 'rehype-stringify'
 import remark2rehype from 'remark-rehype'
-import stringify from 'rehype-stringify'
+import remarkBreaks from 'remark-breaks'
+import remarkEmoji from 'remark-emoji'
+import remarkExternalLinks from 'remark-external-links'
+import remarkParse from 'remark-parse'
 
 type MatterResult = {
     content: string
     data: {
-        id: string
+        slug: string
         title: string
         published: string
         publishedIndex: number
@@ -23,7 +23,7 @@ type MatterResult = {
 
 export type Post = {
     content: string
-    id: string
+    slug: string
     title: string
     published: string
     publishedIndex: number
@@ -45,17 +45,17 @@ const ALL_POSTS = (() => {
     })
 })()
 
-const ID_FILENAME_MAP = (() => {
+const SLUG_FILENAME_MAP = (() => {
     const map = new Map()
     ALL_POSTS.forEach(post => {
-        map.set(post.id, post.fileName.replace(/\.md$/, ''))
+        map.set(post.slug, post.fileName.replace(/\.md$/, ''))
     })
     return map
 })()
 
-// 全てのpostのid一覧を取得
-export function getAllPostIds() {
-    return Array.from(ID_FILENAME_MAP.keys())
+// 全てのpostのslug一覧を取得
+export function getAllPostSlugs() {
+    return Array.from(SLUG_FILENAME_MAP.keys())
 }
 
 export function getSortedPostsData() {
@@ -70,19 +70,19 @@ export function getSortedPostsData() {
     })
 }
 
-// idからpostを取得する
-export async function getPostData(id: string): Promise<Post> {
-    const post = ALL_POSTS.find(post => id === post.id) as Post
+// slugからpostを取得する
+export async function getPostData(slug: string): Promise<Post> {
+    const post = ALL_POSTS.find(post => slug === post.slug) as Post
 
     const processedContent = await unified()
-        .use(markdown)
-        .use(emoji)
+        .use(remarkParse)
+        .use(remarkEmoji)
         .use(remarkBreaks)
         .use(remarkExternalLinks)
         .use(remark2rehype)
-        .use(highlight)
-        .use(slug)
-        .use(stringify)
+        .use(rehypeHighlight)
+        .use(rehypeSlug)
+        .use(rehypeStringify)
         .process(post.content)
     const content = processedContent.toString()
 

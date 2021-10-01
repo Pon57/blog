@@ -17,8 +17,8 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
             <Meta />
             <div>
                 {posts.map(post => (
-                    <article key={post.id} className={styles.article}>
-                        <Link href="./posts/[id]" as={`./posts/${post.id}`}>
+                    <article key={post.slug} className={styles.article}>
+                        <Link href="./posts/[slug]" as={`./posts/${post.slug}`}>
                             <a>
                                 <div>
                                     <h1>{post.title}</h1>
