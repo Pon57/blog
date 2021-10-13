@@ -7,9 +7,11 @@ import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
 import remark2rehype from 'remark-rehype'
 import remarkBreaks from 'remark-breaks'
+import remarkEmbedImages from 'remark-embed-images'
 import remarkEmoji from 'remark-emoji'
 import remarkExternalLinks from 'remark-external-links'
 import remarkParse from 'remark-parse'
+import { toVFile } from 'to-vfile'
 
 type MatterResult = {
     content: string
@@ -73,17 +75,19 @@ export function getSortedPostsData() {
 // slugからpostを取得する
 export async function getPostData(slug: string): Promise<Post> {
     const post = ALL_POSTS.find(post => slug === post.slug) as Post
+    const file = toVFile({ value: post.content, path: process.cwd(), dirname: POSTS_DIRECTORIES })
 
     const processedContent = await unified()
         .use(remarkParse)
         .use(remarkEmoji)
         .use(remarkBreaks)
         .use(remarkExternalLinks)
+        .use(remarkEmbedImages)
         .use(remark2rehype)
         .use(rehypeHighlight)
         .use(rehypeSlug)
         .use(rehypeStringify)
-        .process(post.content)
+        .process(file)
     const content = processedContent.toString()
 
     return {

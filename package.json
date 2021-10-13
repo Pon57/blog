@@ -20,11 +20,13 @@
         "rehype-slug": "^5.0.0",
         "rehype-stringify": "^9.0.2",
         "remark-breaks": "^3.0.1",
+        "remark-embed-images": "^3.0.0",
         "remark-emoji": "^3.0.1",
         "remark-external-links": "^9.0.1",
         "remark-parse": "^10.0.0",
         "remark-rehype": "^9.0.0",
         "remark-stringify": "^10.0.0",
+        "to-vfile": "^7.2.2",
         "unified": "^10.1.0"
     },
     "devDependencies": {
