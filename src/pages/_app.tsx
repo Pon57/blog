@@ -5,7 +5,6 @@ import 'public/styles.css'
 import 'highlight.js/styles/github.css'
 import styles from './_app.module.css'
 import Link from 'next/link'
-import Head from 'next/head'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { useEffect } from 'react'
 

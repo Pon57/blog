@@ -4,9 +4,9 @@ import styles from './index.module.css'
 import Meta from '@/components/Meta'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const ids = await getAllPostSlugs()
+    const slugs = await getAllPostSlugs()
     return {
-        paths: ids.map(slug => ({ params: { slug } })),
+        paths: slugs.map(slug => ({ params: { slug } })),
         fallback: false,
     }
 }

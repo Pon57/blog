@@ -16,7 +16,6 @@ import { toVFile } from 'to-vfile'
 type MatterResult = {
     content: string
     data: {
-        slug: string
         title: string
         published: string
         publishedIndex: number
@@ -31,20 +30,48 @@ export type Post = {
     publishedIndex: number
 }
 
-const POSTS_DIRECTORIES = path.join(process.cwd(), 'posts')
+const BLOG_DIRECTORIE = path.join(process.cwd(), 'posts/blog')
+const ALL_BLOG_POSTS = (() => {
+    const allDirents = fs.readdirSync(BLOG_DIRECTORIE, { withFileTypes: true })
+
+    return allDirents
+        .filter(dirent => dirent.isDirectory())
+        .map(dirent => {
+            const fullPath = path.join(BLOG_DIRECTORIE, dirent.name, 'index.md')
+            const fileContent = fs.readFileSync(fullPath, 'utf8')
+            const matterResult = matter(fileContent)
+            const matterResultData = matterResult.data as MatterResult['data']
+            return {
+                content: matterResult.content,
+                slug: dirent.name,
+                ...matterResultData,
+                fileName: dirent.name,
+            }
+        })
+})()
+
+const DIARY_DIRECTORIE = path.join(process.cwd(), 'posts/diary')
+const ALL_DIARY_POSTS = (() => {
+    const allDirents = fs.readdirSync(DIARY_DIRECTORIE, { withFileTypes: true })
+
+    return allDirents
+        .filter(dirent => dirent.isDirectory())
+        .map(dirent => {
+            const fullPath = path.join(DIARY_DIRECTORIE, dirent.name, 'index.md')
+            const fileContent = fs.readFileSync(fullPath, 'utf8')
+            const matterResult = matter(fileContent)
+            const matterResultData = matterResult.data as MatterResult['data']
+            return {
+                content: matterResult.content,
+                slug: dirent.name,
+                ...matterResultData,
+                fileName: dirent.name,
+            }
+        })
+})()
+
 const ALL_POSTS = (() => {
-    const fileNames = fs.readdirSync(POSTS_DIRECTORIES)
-    return fileNames.map(fileName => {
-        const fullPath = path.join(POSTS_DIRECTORIES, fileName)
-        const fileContent = fs.readFileSync(fullPath, 'utf8')
-        const matterResult = matter(fileContent)
-        const matterResultData = matterResult.data as MatterResult['data']
-        return {
-            content: matterResult.content,
-            ...matterResultData,
-            fileName,
-        }
-    })
+    return ALL_DIARY_POSTS.concat(ALL_BLOG_POSTS)
 })()
 
 const SLUG_FILENAME_MAP = (() => {
@@ -56,12 +83,24 @@ const SLUG_FILENAME_MAP = (() => {
 })()
 
 // 全てのpostのslug一覧を取得
-export function getAllPostSlugs() {
+export async function getAllPostSlugs() {
     return Array.from(SLUG_FILENAME_MAP.keys())
 }
 
-export function getSortedPostsData() {
-    return ALL_POSTS.sort((a, b) => {
+export function getSortedPostsData(type = '') {
+    let posts
+    switch (type) {
+        case 'blog':
+            posts = ALL_BLOG_POSTS
+            break
+        case 'diary':
+            posts = ALL_DIARY_POSTS
+            break
+        default:
+            posts = ALL_POSTS
+            break
+    }
+    return posts.sort((a, b) => {
         if (a.published < b.published) {
             return 1
         } else if (a.published == b.published && a.publishedIndex < b.publishedIndex) {
@@ -75,7 +114,11 @@ export function getSortedPostsData() {
 // slugからpostを取得する
 export async function getPostData(slug: string): Promise<Post> {
     const post = ALL_POSTS.find(post => slug === post.slug) as Post
-    const file = toVFile({ value: post.content, path: process.cwd(), dirname: POSTS_DIRECTORIES })
+    const file = toVFile({
+        value: post.content,
+        path: process.cwd(),
+        dirname: path.join(BLOG_DIRECTORIE, post.slug),
+    })
 
     const processedContent = await unified()
         .use(remarkParse)

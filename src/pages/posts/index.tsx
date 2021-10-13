@@ -7,24 +7,24 @@ import Meta from '@/components/Meta'
 export const getStaticProps: GetStaticProps<{
     posts: ReturnType<typeof getSortedPostsData>
 }> = async () => {
-    const posts = getSortedPostsData('blog')
+    const posts = getSortedPostsData()
     return { props: { posts } }
 }
 
 const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
-            <Meta />
+            <Meta title="全ての投稿" />
             <div className={styles.tabs}>
                 <ul className={styles.tab}>
                     <li>
                         <Link href="/posts">
-                            <a className={styles.tabItem}>全部</a>
+                            <a className={`${styles.tabItem} ${styles.selected}`}>全部</a>
                         </Link>
                     </li>
                     <li>
                         <Link href="/">
-                            <a className={`${styles.tabItem} ${styles.selected}`}>ブログ</a>
+                            <a className={styles.tabItem}>ブログ</a>
                         </Link>
                     </li>
                     <li>
