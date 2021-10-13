@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType, GetStaticProps } from 'next'
 import Link from 'next/link'
 import { getSortedPostsData } from '@/lib/posts'
-import styles from './index.module.css'
+import styles from '../index.module.css'
 import Meta from '@/components/Meta'
 
 export const getStaticProps: GetStaticProps<{
