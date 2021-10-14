@@ -1,6 +1,7 @@
 .site {
     max-width: 1000px;
     margin: auto;
+    overflow-wrap: break-word;
 }
 
 .content {
