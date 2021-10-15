@@ -80,7 +80,6 @@ const processedContent = await unified()
 ...
     .use(rehypeStringify)
     .process(file)
-
 ```
 
 としたら無事動いた :tada:
