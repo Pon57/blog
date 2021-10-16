@@ -72,14 +72,16 @@ VSCode で特に何もせず使えたデバッガーを利用して変数の中�
 
 そうか、`remark-embed-images` の `file` は `vfile` のことだったのか・・・となった（どうして `vfile` なのかはまだ分かってない）
 
-```
-const file = toVFile({ value: post.content, path: process.cwd(), dirname: 'posts' })
+```diff
+const post = ALL_POSTS.find(post => slug === post.slug) as Post
++ const file = toVFile({ value: post.content, path: process.cwd(), dirname: 'posts' })
 
 const processedContent = await unified()
     .use(remarkParse)
 ...
     .use(rehypeStringify)
-    .process(file)
+-   .process(post)
++   .process(file)
 ```
 
 としたら無事動いた :tada:
