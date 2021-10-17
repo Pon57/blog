@@ -24,7 +24,7 @@ publishedIndex: 1
 
 `gray-matter` でメタデータを解析したのち、コンテンツの文字列を抜き出して使っていた。
 
-```
+```typescript
 const post = ALL_POSTS.find(post => slug === post.slug) as Post
 
 const processedContent = await unified()
