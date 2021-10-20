@@ -2,6 +2,7 @@
 title: 'iOSDC Japan 2021に参加した話'
 published: '2021-09-21'
 publishedIndex: 1
+tags: [Conference, iOS]
 ---
 
 初の iOSDC Japan 参加記であり、初のカンファレンス参加記です。 :tada: [iOSDC Japan 2021](https://iosdc.jp/2021/)

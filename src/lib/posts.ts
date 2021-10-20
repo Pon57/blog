@@ -19,6 +19,7 @@ type MatterResult = {
         title: string
         published: string
         publishedIndex: number
+        tags: string[]
     }
 }
 
@@ -28,6 +29,7 @@ export type Post = {
     title: string
     published: string
     publishedIndex: number
+    tags: string[] | null
 }
 
 const BLOG_DIRECTORIE = path.join(process.cwd(), 'posts/blog')

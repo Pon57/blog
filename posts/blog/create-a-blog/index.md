@@ -2,6 +2,7 @@
 title: 'ブログを作った話'
 published: '2021-09-21'
 publishedIndex: 0
+tags: [TypeScript, Next.js, Blog]
 ---
 
 この前 [iOSDC Japan 2021](https://iosdc.jp/2021/) というカンファレンスに参加しました。そこで出てくるキーワードとして「iwillblog」というものがあります。

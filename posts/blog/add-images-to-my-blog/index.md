@@ -2,6 +2,7 @@
 title: 'ブログに画像を貼れるようにした'
 published: '2021-10-14'
 publishedIndex: 1
+tags: [TypeScript, Next.js, Blog]
 ---
 
 少しずつ弄ってるブログですが、この度画像を貼れるようにしました。
