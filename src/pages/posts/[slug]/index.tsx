@@ -20,13 +20,23 @@ const PostPage = ({
     title,
     content,
     published,
+    tags,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
             <Meta title={title} type="article" />
             <div className={styles.published}>{published}</div>
             <h1 className={styles.title}>{title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
+            {tags && (
+                <p className={styles.tags}>
+                    {tags.map((tag, index) => (
+                        <span className={styles.tag} key={index}>
+                            {tag}
+                        </span>
+                    ))}
+                </p>
+            )}
+            <div className={styles.content} dangerouslySetInnerHTML={{ __html: content }} />
         </>
     )
 }

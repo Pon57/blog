@@ -40,20 +40,20 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                         <Link href="/posts/[slug]" as={`/posts/${post.slug}`}>
                             <a>
                                 <div>
-                                    <h1>{post.title}</h1>
-                                    {post.tags && (
-                                        <div className={styles.meta}>
-                                            <div className={styles.tags}>
-                                                {post.tags?.map((tag, index) => (
-                                                    <p className={styles.tag} key={index}>
-                                                        {tag}
-                                                    </p>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    )}
+                                    <h1 className={styles.title}>{post.title}</h1>
                                     <p className={styles.content}>{post.content.substr(0, 300)}</p>
-                                    <p className={styles.published}>{post.published}</p>
+                                    <div className={styles.meta}>
+                                        {post.tags && (
+                                            <p className={styles.tags}>
+                                                {post.tags?.map((tag, index) => (
+                                                    <span className={styles.tag} key={index}>
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </p>
+                                        )}
+                                        <p className={styles.published}>{post.published}</p>
+                                    </div>
                                 </div>
                             </a>
                         </Link>

@@ -1,3 +1,7 @@
+.title {
+    font-size: large;
+}
+
 .content {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -7,37 +11,39 @@
     max-height: 3.5rem;
     text-decoration: none;
     color: black;
+    margin: 5px 0;
 }
 
 .meta {
-    margin-top: 25px;
     padding-left: 2px;
     width: 100%;
     text-align: right;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .tags {
     position: absolute;
-    top: calc(50% - 30px);
+    top: 0;
+    margin: 0 2px;
+    font-size: xx-small;
 }
 
 .tags:before {
     content: '';
     background: url(../../public/tag.svg);
     background-size: contain;
-    transform: translate(0px, 3px);
+    transform: translate(0px, 2px);
     margin-right: 1px;
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     display: inline-block;
 }
 
 .tag {
     display: inline-block;
-    margin: 0 0.1em 0.6em 0;
+    margin-top: 0 0.1em 0 0;
     padding: 0.1em 0.2em;
-    font-size: small;
     line-height: 1;
     text-decoration: none;
     color: steelblue;
@@ -45,13 +51,13 @@
 }
 
 .published {
-    text-align: right;
-    font-size: xx-small;
+    font-size: x-small;
     color: black;
+    margin: 0;
 }
 
 .article {
-    margin: auto;
+    margin-top: 20px;
     font-size: large;
 }
 
@@ -61,11 +67,13 @@
 
 .article h1 {
     margin: 0;
+    padding: 0;
     text-decoration: none;
 }
 
 .tabs {
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .tab {
