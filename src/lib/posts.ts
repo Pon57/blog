@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { unified } from 'unified'
+import rehypeExternalLinks from 'rehype-external-links'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
@@ -9,7 +10,6 @@ import remark2rehype from 'remark-rehype'
 import remarkBreaks from 'remark-breaks'
 import remarkEmbedImages from 'remark-embed-images'
 import remarkEmoji from 'remark-emoji'
-import remarkExternalLinks from 'remark-external-links'
 import remarkParse from 'remark-parse'
 import { toVFile } from 'to-vfile'
 
@@ -126,9 +126,9 @@ export async function getPostData(slug: string): Promise<Post> {
         .use(remarkParse)
         .use(remarkEmoji)
         .use(remarkBreaks)
-        .use(remarkExternalLinks)
         .use(remarkEmbedImages)
         .use(remark2rehype)
+        .use(rehypeExternalLinks)
         .use(rehypeHighlight)
         .use(rehypeSlug)
         .use(rehypeStringify)
