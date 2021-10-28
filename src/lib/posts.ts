@@ -10,6 +10,7 @@ import remark2rehype from 'remark-rehype'
 import remarkBreaks from 'remark-breaks'
 import remarkEmbedImages from 'remark-embed-images'
 import remarkEmoji from 'remark-emoji'
+import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse'
 import { toVFile } from 'to-vfile'
 
@@ -124,9 +125,10 @@ export async function getPostData(slug: string): Promise<Post> {
 
     const processedContent = await unified()
         .use(remarkParse)
-        .use(remarkEmoji)
         .use(remarkBreaks)
         .use(remarkEmbedImages)
+        .use(remarkEmoji)
+        .use(remarkGfm)
         .use(remark2rehype)
         .use(rehypeExternalLinks)
         .use(rehypeHighlight)

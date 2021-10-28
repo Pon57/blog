@@ -29,7 +29,7 @@ March 28, 2021 はい・・・
 
 Next.js で Markdown を読んで GitHub Actions で SSG して GitHub Pages で配信という形を取りました。（他のサービスを使うのが何となく面倒くさかったので GitHub で完結するようにしました）
 
-ソースコードは [https://github.com/Pon57/blog](https://github.com/Pon57/blog) にあります。
+ソースコードは https://github.com/Pon57/blog にあります。
 
 フロントほぼ何もわからないという状態なので、「nextjs ブログ」みたいな感じで調べて出来そうなものをピックアップし写経するという形を取りました。
 みたのは [Next.js + TypeScript + VercelでJamstackなブログを作る その1 - 環境構築/記事の作成・表示](https://blog.zenpachi.dev/posts/nextjs-blog/) です :pray:

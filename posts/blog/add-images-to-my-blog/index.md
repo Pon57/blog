@@ -14,11 +14,11 @@ tags: [TypeScript, Next.js, Blog]
 
 # 使おうとしたもの
 
-[remark-embed-images](https://github.com/remarkjs/remark-embed-images)
+[remarkjs/remark-embed-images](https://github.com/remarkjs/remark-embed-images)
 
 # やったこと
 
-[https://github.com/Pon57/blog/commit/a74e1a337368daa3b692f78a9ae92f9b90b8881e](https://github.com/Pon57/blog/commit/a74e1a337368daa3b692f78a9ae92f9b90b8881e)
+https://github.com/Pon57/blog/commit/a74e1a337368daa3b692f78a9ae92f9b90b8881e
 
 # 引っかかったところ
 
@@ -54,7 +54,7 @@ const processedContent = await unified()
 出ている場所は `remarkEmbedImages` で間違いないが、なんのこっちゃという感じ。
 
 エラーが示していた場所はここ。
-[https://github.com/remarkjs/remark-embed-images/blob/main/index.js#L27](https://github.com/remarkjs/remark-embed-images/blob/main/index.js#L27)
+https://github.com/remarkjs/remark-embed-images/blob/main/index.js#L27
 
 `path` が関係あるのかと思いきや、`path` の引数が `undefined` の場合もこういうエラーが出るらしい。
 VSCode で特に何もせず使えたデバッガーを利用して変数の中身を見てみると、どうやら `file.dirname` が原因だろうというところまでわかった。
@@ -62,13 +62,13 @@ VSCode で特に何もせず使えたデバッガーを利用して変数の中�
 じゃあ `file` はなんなの？となるけど、コードを見てもいまいち分からず・・・
 
 なんか検索しているうちに再実装しているリポジトリを見つけた。
-[https://github.com/ahlec/jyosuushi/blob/0990e7c75c2df7c704acb9bcaca23bf999b3d181/scripts/markdown/parsing/embeded-images.ts](https://github.com/ahlec/jyosuushi/blob/0990e7c75c2df7c704acb9bcaca23bf999b3d181/scripts/markdown/parsing/embeded-images.ts)
+https://github.com/ahlec/jyosuushi/blob/0990e7c75c2df7c704acb9bcaca23bf999b3d181/scripts/markdown/parsing/embeded-images.ts
 
 そんなこんなしているうちに `file.dirname` に `posts` という固定文字列を入れてみた。動いた！
 この時世界が動き出した。
 
 なんでか覚えてないけど `.process()` には `vfile` を入れることができるということを知り、`vfile` は `dirname` や `path`、`cwd` があり、なんかみたことのあるな〜という感じ。
-[https://github.com/vfile/vfile](https://github.com/vfile/vfile)
+https://github.com/vfile/vfile
 
 そうか、`remark-embed-images` の `file` は `vfile` のことだったのか・・・となった（どうして `vfile` なのかはまだ分かってない）
 
