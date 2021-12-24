@@ -4,7 +4,7 @@ import styles from './index.module.css'
 import Meta from '@/components/Meta'
 import { ParsedUrlQuery } from 'node:querystring'
 
-export interface Param extends ParsedUrlQuery {
+interface Param extends ParsedUrlQuery {
     slug: string
 }
 
