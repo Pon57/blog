@@ -77,8 +77,8 @@ const ALL_POSTS = (() => {
     return ALL_DIARY_POSTS.concat(ALL_BLOG_POSTS)
 })()
 
-const SLUG_FILENAME_MAP = (() => {
-    const map = new Map()
+const SLUG_FILENAME_MAP: Map<string, string> = (() => {
+    const map = new Map<string, string>()
     ALL_POSTS.forEach(post => {
         map.set(post.slug, post.fileName.replace(/\.md$/, ''))
     })
@@ -86,7 +86,7 @@ const SLUG_FILENAME_MAP = (() => {
 })()
 
 // 全てのpostのslug一覧を取得
-export async function getAllPostSlugs() {
+export async function getAllPostSlugs(): Promise<string[]> {
     return Array.from(SLUG_FILENAME_MAP.keys())
 }
 

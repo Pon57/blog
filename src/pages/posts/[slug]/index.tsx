@@ -2,16 +2,25 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { getPostData, getAllPostSlugs, Post } from '@/lib/posts'
 import styles from './index.module.css'
 import Meta from '@/components/Meta'
+import { ParsedUrlQuery } from 'node:querystring'
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export interface Param extends ParsedUrlQuery {
+    slug: string
+}
+
+export const getStaticPaths: GetStaticPaths<Param> = async () => {
     const slugs = await getAllPostSlugs()
+    const paths = slugs.map(slug => {
+        return { params: { slug: slug } as Param }
+    })
+
     return {
-        paths: slugs.map(slug => ({ params: { slug } })),
+        paths: paths,
         fallback: false,
     }
 }
 
-export const getStaticProps: GetStaticProps<Post, { slug: string }> = async context => {
+export const getStaticProps: GetStaticProps<Post, Param> = async context => {
     const data = await getPostData((context.params || {}).slug as string)
     return { props: data }
 }
