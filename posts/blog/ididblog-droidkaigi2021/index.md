@@ -162,8 +162,8 @@ DroidKaigi に関しては行動規範の周知や遵守を徹底しているよ
 
 今回自分は [DroidKaigi/conference-app-2021](https://github.com/DroidKaigi/conference-app-2021) に Contribute しました！
 
-> いた！ [#DroidKaigi](https://twitter.com/hashtag/DroidKaigi?src=hash&amp;ref_src=twsrc%5Etfw) &mdash; [ぽん (@pon_dev)](https://twitter.com/pon_dev/status/1450264713787371521?ref_src=twsrc%5Etfw)October 19, 2021
-> ![contribute](./FCBf8W0UcAAvMIV.jpeg)
+> いた！ [#DroidKaigi](https://twitter.com/hashtag/DroidKaigi?src=hash&ref_src=twsrc%5Etfw) &mdash; [ぽん (@pon_dev)](https://twitter.com/pon_dev/status/1450264713787371521?ref_src=twsrc%5Etfw)October 19, 2021
+> ![contribute](./static/FCBf8W0UcAAvMIV.jpeg)
 
 [DroidKaigi/conference-app-2020](https://github.com/DroidKaigi/conference-app-2020) を何回も参考にしたので、ちょっとした変更ではありますがとても感慨深いです。
 自分がメインでキャリアを積んでいる技術の界隈に、このような場や機会が存在することはとても幸せだなと思いました。

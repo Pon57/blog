@@ -8,9 +8,9 @@ import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
 import remark2rehype from 'remark-rehype'
 import remarkBreaks from 'remark-breaks'
-import remarkEmbedImages from 'remark-embed-images'
 import remarkEmoji from 'remark-emoji'
 import remarkGfm from 'remark-gfm'
+import remarkImages from 'remark-images'
 import remarkParse from 'remark-parse'
 import { toVFile } from 'to-vfile'
 
@@ -132,7 +132,7 @@ export async function getPostData(slug: string): Promise<Post> {
     const processedContent = await unified()
         .use(remarkParse)
         .use(remarkBreaks)
-        .use(remarkEmbedImages)
+        .use(remarkImages)
         .use(remarkEmoji)
         .use(remarkGfm)
         .use(remark2rehype)

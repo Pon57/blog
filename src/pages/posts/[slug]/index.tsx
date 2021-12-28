@@ -23,13 +23,11 @@ export const getStaticPaths: GetStaticPaths<Param> = async () => {
 
 const salvageStaticFiles = (slug: string, staticFiles: string[]) => {
     staticFiles.forEach(staticFile => {
-        const fileContent = fs.readFileSync(
+        fs.mkdirSync(path.join(process.cwd(), 'public/posts/static'), { recursive: true })
+        fs.copyFileSync(
             path.join(process.cwd(), 'posts/blog', slug, 'static', staticFile),
-            'utf8',
+            path.join(process.cwd(), 'public/posts/static', staticFile),
         )
-
-        fs.mkdirSync('./public/posts/static', { recursive: true })
-        fs.writeFileSync('./public/posts/static/' + staticFile, fileContent)
     })
 }
 
