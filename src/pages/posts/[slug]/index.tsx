@@ -1,17 +1,18 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
-import { getPostData, getAllPostSlugs, Post } from '@/lib/posts'
 import styles from './index.module.css'
 import Meta from '@/components/Meta'
 import { ParsedUrlQuery } from 'node:querystring'
+import fs from 'fs'
+import path from 'path'
+import { ALL_POSTS, getPostData, Post } from '@/lib/posts'
 
 interface Param extends ParsedUrlQuery {
     slug: string
 }
 
 export const getStaticPaths: GetStaticPaths<Param> = async () => {
-    const slugs = await getAllPostSlugs()
-    const paths = slugs.map(slug => {
-        return { params: { slug: slug } as Param }
+    const paths = ALL_POSTS.map(post => {
+        return { params: { slug: post.slug } as Param }
     })
 
     return {
@@ -20,8 +21,20 @@ export const getStaticPaths: GetStaticPaths<Param> = async () => {
     }
 }
 
+const salvageStaticFiles = (slug: string, staticFiles: string[]) => {
+    staticFiles.forEach(staticFile => {
+        fs.mkdirSync(path.join(process.cwd(), 'public/posts/static'), { recursive: true })
+        fs.copyFileSync(
+            path.join(process.cwd(), 'posts/blog', slug, 'static', staticFile),
+            path.join(process.cwd(), 'public/posts/static', staticFile),
+        )
+    })
+}
+
 export const getStaticProps: GetStaticProps<Post, Param> = async context => {
-    const data = await getPostData((context.params || {}).slug as string)
+    const slug = (context.params || {}).slug as string
+    const data = await getPostData(slug)
+    salvageStaticFiles(slug, data.staticFiles)
     return { props: data }
 }
 

@@ -7,7 +7,7 @@ tags: [TypeScript, Next.js, Blog]
 
 少しずつ弄ってるブログですが、この度画像を貼れるようにしました。
 
-[![サンプル画像](./james-harrison-vpOeXr5wmR4-unsplash.jpg)](https://unsplash.com/photos/vpOeXr5wmR4)
+[![サンプル画像](./static/james-harrison-vpOeXr5wmR4-unsplash.jpg)](https://unsplash.com/photos/vpOeXr5wmR4)
 ｼﾞｬｰﾝ
 
 その時少しハマったので、ログを残しておきます。
