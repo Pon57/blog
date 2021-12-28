@@ -12,7 +12,6 @@ import remarkEmoji from 'remark-emoji'
 import remarkGfm from 'remark-gfm'
 import remarkImages from 'remark-images'
 import remarkParse from 'remark-parse'
-import { toVFile } from 'to-vfile'
 
 type MatterResult = {
     content: string
@@ -123,11 +122,6 @@ export function getSortedPostsData(type = '') {
 // slugからpostを取得する
 export async function getPostData(slug: string): Promise<Post> {
     const post = ALL_POSTS.find(post => slug === post.slug) as Post
-    const file = toVFile({
-        value: post.content,
-        path: process.cwd(),
-        dirname: path.join(BLOG_DIRECTORIE, post.slug),
-    })
 
     const processedContent = await unified()
         .use(remarkParse)
@@ -140,7 +134,7 @@ export async function getPostData(slug: string): Promise<Post> {
         .use(rehypeHighlight)
         .use(rehypeSlug)
         .use(rehypeStringify)
-        .process(file)
+        .process(post.content)
     const content = processedContent.toString()
 
     return {

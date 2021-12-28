@@ -27,7 +27,6 @@
         "remark-parse": "^10.0.0",
         "remark-rehype": "^9.0.0",
         "remark-stringify": "^10.0.0",
-        "to-vfile": "^7.2.2",
         "unified": "^10.1.0"
     },
     "devDependencies": {
