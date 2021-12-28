@@ -31,6 +31,7 @@ export type Post = {
     published: string
     publishedIndex: number
     tags: string[] | null
+    staticFiles: string[]
 }
 
 const BLOG_DIRECTORIE = path.join(process.cwd(), 'posts/blog')
@@ -44,11 +45,20 @@ const ALL_BLOG_POSTS = (() => {
             const fileContent = fs.readFileSync(fullPath, 'utf8')
             const matterResult = matter(fileContent)
             const matterResultData = matterResult.data as MatterResult['data']
+
+            let staticFiles: string[]
+            try {
+                staticFiles = fs.readdirSync(path.join(BLOG_DIRECTORIE, dirent.name, 'static'))
+            } catch {
+                staticFiles = []
+            }
+
             return {
                 content: matterResult.content,
                 slug: dirent.name,
                 ...matterResultData,
                 fileName: dirent.name,
+                staticFiles: staticFiles,
             }
         })
 })()
@@ -64,31 +74,27 @@ const ALL_DIARY_POSTS = (() => {
             const fileContent = fs.readFileSync(fullPath, 'utf8')
             const matterResult = matter(fileContent)
             const matterResultData = matterResult.data as MatterResult['data']
+
+            let staticFiles: string[]
+            try {
+                staticFiles = fs.readdirSync(path.join(DIARY_DIRECTORIE, dirent.name, 'static'))
+            } catch {
+                staticFiles = []
+            }
+
             return {
                 content: matterResult.content,
                 slug: dirent.name,
                 ...matterResultData,
                 fileName: dirent.name,
+                staticFiles: staticFiles,
             }
         })
 })()
 
-const ALL_POSTS = (() => {
+export const ALL_POSTS = (() => {
     return ALL_DIARY_POSTS.concat(ALL_BLOG_POSTS)
 })()
-
-const SLUG_FILENAME_MAP: Map<string, string> = (() => {
-    const map = new Map<string, string>()
-    ALL_POSTS.forEach(post => {
-        map.set(post.slug, post.fileName.replace(/\.md$/, ''))
-    })
-    return map
-})()
-
-// 全てのpostのslug一覧を取得
-export async function getAllPostSlugs(): Promise<string[]> {
-    return Array.from(SLUG_FILENAME_MAP.keys())
-}
 
 export function getSortedPostsData(type = '') {
     let posts
