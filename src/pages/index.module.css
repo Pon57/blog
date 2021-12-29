@@ -1,5 +1,6 @@
 .title {
     font-size: large;
+    border-bottom: solid 1px #ccc;
 }
 
 .content {
@@ -46,7 +47,7 @@
     padding: 0.1em 0.2em;
     line-height: 1;
     text-decoration: none;
-    color: steelblue;
+    color: black;
     background-color: #fff;
 }
 

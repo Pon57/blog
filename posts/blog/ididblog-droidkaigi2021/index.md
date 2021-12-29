@@ -8,13 +8,13 @@ tags: [Conference, Android]
 [DroidKaigi 2021](https://droidkaigi.jp/2021/)に参加したので忘れないうちに書いておこうと思います。
 業務では Android を主に書いていて、メインでガッツリ触っている技術のカンファレンスに参加するのは初めてになります。
 
-# DroidKaigi 2021とは
+## DroidKaigi 2021とは
 
 > DroidKaigiはエンジニアが主役のAndroidカンファレンスです。 Android技術情報の共有とコミュニケーションを目的に、2021年10月19日(火)、20日(水)、21日(木)の3日間開催します。
-> 
+>
 > 参照：[DroidKaigi 2021](https://droidkaigi.jp/2021/)
 
-# 特に自分に刺さったセッション
+## 特に自分に刺さったセッション
 
 - [タイムテーブル](https://droidkaigi.jp/2021/timetable)
 - [DroidKaigi 2021 - YouTube](https://www.youtube.com/playlist?list=PLaOdaBFokChwyYpRl3jkqjCC4I6Jmb5Jg) (全セッション動画のプレイリスト)
@@ -23,10 +23,10 @@ tags: [Conference, Android]
 平日開催なので仕事しながら聴いていました。裏で流していたので、基本的にどのセッションも音は聴いています。
 どれも面白かったですが、その中でも特に興味を持って聴いていたセッションを感想とともに書いておこうと思います。
 
-## プロダクトレベルで必要になる Jetpack Compose テクニック
+### プロダクトレベルで必要になる Jetpack Compose テクニック
 
-- https://droidkaigi.jp/2021/timetable/276801?day=1
-- https://youtu.be/_5vP-NIRUCM
+- <https://droidkaigi.jp/2021/timetable/276801?day=1>
+- <https://youtu.be/_5vP-NIRUCM>
 
 今まさに Jetpack Compose を利用したアプリを作ろう！となっているので、画面遷移関連や便利ライブラリ等は特に今欲しかったものだ！！となりました。というか発表内容の殆どが今欲しいものなのでは？という感じ。
 
@@ -35,10 +35,10 @@ tags: [Conference, Android]
 ちなみに [DroidKaigi/conference-app-2021](https://github.com/DroidKaigi/conference-app-2021) を触っていて気になった挙動が、発表に出てきた「下にある要素がタップを拾わないようにしたい」にそっくりな事象だったので、直すか！と少しコードを触りました。
 `BackdropScaffold` っていうのを使っていて、うまいことぱっと解決はできなかった。撃沈。(なので [conference-app-2021#743](https://github.com/DroidKaigi/conference-app-2021/issues/743) を立てた)
 
-## Androidエンジニアが1人という不安と向き合う
+### Androidエンジニアが1人という不安と向き合う
 
-- https://droidkaigi.jp/2021/timetable/277386?day=1
-- https://youtu.be/5M0xJLdAcAE
+- <https://droidkaigi.jp/2021/timetable/277386?day=1>
+- <https://youtu.be/5M0xJLdAcAE>
 
 自分は2019年入社後2021年現在までチームで Android エンジニアが1人という環境にいます。業務も3年目になって不安を感じている真っ最中なので、これは絶対に聴こうと思っていました。
 スライドに書いてある「これまでに抱えてきた不安」は自分も本当にそう感じていて、うわ〜〜〜やっぱそれ悩むよね〜〜〜っていう感じでなんか面白かった。
@@ -62,10 +62,10 @@ tags: [Conference, Android]
 
 自分にターゲットされているかのようなセッションで、聴けてめちゃ良かったです。
 
-## ★2.2のアプリがIn-App Review APIを導入して★4.2になるまで
+### ★2.2のアプリがIn-App Review APIを導入して★4.2になるまで
 
-- https://droidkaigi.jp/2021/timetable/277349?day=2
-- https://youtu.be/PvAw4jNQc10
+- <https://droidkaigi.jp/2021/timetable/277349?day=2>
+- <https://youtu.be/PvAw4jNQc10>
 
 現在業務でストアレビューを良くしようタスクに着手している最中で、過去に[In-App Review APIでAndroidアプリレビューがめちゃくちゃ改善した話｜neuet / チャリチャリ｜note](https://note.com/neuet/n/n7b6d1f340606)を読んでいたので、より詳しく聴きたいなと思っていました。
 
@@ -79,10 +79,10 @@ tags: [Conference, Android]
 
 `In-App Review API` がいいよ！みんなとりあえず使っておくべき！みたいな感じではなく、しっかりと状況を分析した上で導き出した施策の一つが `In-App Review API` でしたという話で、 `In-App Review API` を 使う/使わない/使っている/使っていない に関わらずとてもいい話でした。
 
-## 触って学ぶAccessibility
+### 触って学ぶAccessibility
 
-- https://droidkaigi.jp/2021/timetable/276229?day=2
-- https://youtu.be/Rch-Uqk8MkA
+- <https://droidkaigi.jp/2021/timetable/276229?day=2>
+- <https://youtu.be/Rch-Uqk8MkA>
 
 お恥ずかしながら、自分は Accessibility を考えて実装したことが殆どありませんでした。存在は知っています。
 実際にやるべきこととかは特に分かっておらず、そもそもどういった方法で操作をしているのかもあまり知りませんでした。
@@ -91,20 +91,20 @@ tags: [Conference, Android]
 
 実際の体験から入門することができてわかりやすくてよかったです。
 
-## 2021年こそアクセシビリティと向き合おう
+### 2021年こそアクセシビリティと向き合おう
 
-- https://droidkaigi.jp/2021/timetable/276232?day=3
-- https://www.youtube.com/watch?v=RfSqaGQTXOY
+- <https://droidkaigi.jp/2021/timetable/276232?day=3>
+- <https://www.youtube.com/watch?v=RfSqaGQTXOY>
 
 ボタンを正確に押せない・複雑な操作が難しいとかの視点は持てていなく、想像することもできていなかったです。今までだと、押せるか押せないか、見えるか見えないかくらいしか想像できていなく、ハッとしました。
 また、「うるさい場所では何も聞こえない」や「その言語が堪能ではないのでトーストが消えるまでに読めない」等の状況的障害は、たしかに。と思いました。
 聴けたのは最初のところだけで実装のところはしっかり聞けなかったので、後日しっかり聴こうと思います。~~最初動画を60分で作っていたらしく？て完全版が出るらしいので楽しみ。~~
 40分だった。動画が公開されていたのでとりあえず更新。
 
-## いかにしてアプリの起動時間を改善するか
+### いかにしてアプリの起動時間を改善するか
 
-- https://droidkaigi.jp/2021/timetable/272862?day=3
-- https://youtu.be/8z0fKUcC110
+- <https://droidkaigi.jp/2021/timetable/272862?day=3>
+- <https://youtu.be/8z0fKUcC110>
 
 今までパフォーマンスを特に意識した改善とかをやったことがなかったので、実際どういうふうにやっていくんだろうというのは興味がありました。
 
@@ -122,7 +122,7 @@ tags: [Conference, Android]
 それな！これは大体のことに言えそう。
 運用・監視に関してはパフォーマンス以外のことにも適用できそうみたいなことが多くて為になりました。
 
-## その他もろもろ
+### その他もろもろ
 
 [Inside Jetpack Compose](https://droidkaigi.jp/2021/timetable/277384?day=3)とか[原理から完全理解するDagger Hilt Migration](https://droidkaigi.jp/2021/timetable/275396?day=3)とかは面白そうだなってなっていましたが、ながら聴きでは自分に難しかった・・・後でゆっくり聴きなおそうかなと思います。
 英語のセッションに関しても基本的にﾜｶﾗﾝなので、これもまたゆっくり。
@@ -133,16 +133,16 @@ tags: [Conference, Android]
 [動かす](https://droidkaigi.jp/2021/timetable/277266?day=1)とかは発表資料がそもそも Android アプリだったりして、うお〜〜〜おもしろ〜〜いってなりました。
 (動かすの発表資料リポジトリ -> [yaraki/AnimateIt](https://github.com/yaraki/AnimateIt))
 
-# セッションの内容以外の話
+## セッションの内容以外の話
 
-## ノベルティ
+### ノベルティ
 
 まずノベルティ。Tシャツは結構しっかりした生地で、普段使いにも全く困らなさそうなものでした。自分はトークの募集に応募していないので扇子はもらっていませんが、めちゃくちゃ**センス**がいいと思いました！！ピンバッジかわいい。
 スポンサーさんの選んだものも色々入っていて楽しいです。
 他カンファレンスでもスポンサーをしている企業も結構いてびっくりしました。
 カンファレンスのスポンサーをする等の技術コミュニティへの支援・貢献をしているのは素直にすごいな〜えらいな〜と思います。(偉そう)
 
-## 運営
+### 運営
 
 セッションのオフィスアワーに関しての質問を拾うのも人力でコメントや Twitter から拾っているのも大変だ〜ありがとうございます :pray: と思いますし、そもそもそれら含めた進行がすごい。MC （っていうんですかね？）も皆さん上手くてすごかったです。
 
@@ -150,13 +150,13 @@ tags: [Conference, Android]
 
 最終日のうちにアーカイブが殆ど上がるのも嬉しい。その他自分の気が付かない範囲でも色々動いていたんだと思っています。ありがとうございます 🙏
 
-## 行動規範
+### 行動規範
 
 DroidKaigi に関しては行動規範の周知や遵守を徹底しているような感じがしていて、その内容も自分はすごく納得できるのでめちゃくちゃ良いと思いました。
 [一般社団法人DroidKaigi › 行動規範](https://association.droidkaigi.jp/code-of-conduct.html)
 内容はすごく納得できているので、自分も気をつけながらこの行動規範を遵守していければなと思います。DroidKaigi の場以外においても。
 
-# DroidKaigi公式フィードアプリ
+## DroidKaigi公式フィードアプリ
 
 セッションの [DroidKaigiカンファレンスアプリの歴史からみるアプリアーキテクチャのこれまでとこれから](https://droidkaigi.jp/2021/timetable/277194?day=2) をみてもわかる通り、2016年からアプリが存在しています。（OSS 化したのは2017年〜らしい）
 
@@ -171,7 +171,7 @@ DroidKaigi に関しては行動規範の周知や遵守を徹底しているよ
 今回はカンファレンスのためだけのアプリじゃなく、ためになる情報とかも載ってるっぽい（今後載るっぽい）です。すごい！うれしい〜。
 (アプリの Google Play リンク → [DroidKaigi公式フィードアプリ](https://play.google.com/store/apps/details?id=io.github.droidkaigi.feeder))
 
-# 終わりに
+## 終わりに
 
 カンファレンスは何回か参加したことがありますが、全部そのときにはメインで触っていないこと（もしくはほぼ何もわからない）の状態の時しかなく、セッションを聴いてもへ〜〜〜くらいにしか思うことができませんでした。
 今回は初めてメインでそれなりに触っている技術のカンファレンスに参加して、それらとはまた別の種類の面白さも感じることができました。

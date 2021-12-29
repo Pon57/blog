@@ -1,5 +1,4 @@
 .title {
-    font-size: x-large;
     margin: 0;
     border: 0px;
 }
@@ -37,6 +36,6 @@
     padding: 0.1em 0.2em;
     line-height: 1;
     text-decoration: none;
-    color: steelblue;
+    color: black;
     background-color: #fff;
 }
