@@ -23,7 +23,7 @@ index.md から画像への相対的な位置が違うので、どっちか（�
 
 [画像を base64 で埋め込むやつじゃない感じにできないか考える · Issue #8 · Pon57/blog](https://github.com/Pon57/blog/issues/8)
 
-Static HTML Export 時に `/posts/blog/[slug]/static` フォルダにあるファイルを全て /public にコピーするようにした。
+Static HTML Export 時に `/posts/blog/[slug]/static` フォルダにあるファイルを全て `/public` にコピーするようにした。
 つまり `/public/static/hoge.jpg` みたいなファイルが生える。
 同名のファイルがあった場合は後に同じ処理が走った時点で新しいファイルで上書きされそうな気がするけど、そこはまあ運用でカバーする。
 
