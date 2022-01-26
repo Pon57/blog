@@ -5,8 +5,7 @@ publishedIndex: 1
 tags: [TypeScript, Next.js, Blog]
 ---
 
-※追記：
-その後実装を変えました [ブログに画像を貼れるようにした〜その後〜](/posts/add-images-to-my-blog2)
+※追記：その後実装を変えました [ブログに画像を貼れるようにした〜その後〜](/posts/add-images-to-my-blog2)
 
 少しずつ弄ってるブログですが、この度画像を貼れるようにしました。
 
