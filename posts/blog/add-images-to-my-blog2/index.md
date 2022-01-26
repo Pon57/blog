@@ -23,7 +23,9 @@ index.md から画像への相対的な位置が違うので、どっちか（�
 
 [画像を base64 で埋め込むやつじゃない感じにできないか考える · Issue #8 · Pon57/blog](https://github.com/Pon57/blog/issues/8)
 
-Static HTML Export 時に `/posts/blog/[slug]/static` フォルダにあるファイルを全て `/public` にコピーするようにした。
+まず [remarkjs/remark-embed-images](https://github.com/remarkjs/remark-embed-images) から [remarkjs/remark-images](https://github.com/remarkjs/remark-images) に変えた。
+
+そして Static HTML Export 時に `/posts/blog/[slug]/static` フォルダにあるファイルを全て `/public/static` にコピーするようにした。
 つまり `/public/static/hoge.jpg` みたいなファイルが生える。
 同名のファイルがあった場合は後に同じ処理が走った時点で新しいファイルで上書きされそうな気がするけど、そこはまあ運用でカバーする。
 
@@ -40,10 +42,11 @@ const salvageStaticFiles = (slug: string, staticFiles: string[]) => {
 ```
 
 こんな感じの関数を作って、これを `getStaticProps` の中で呼ぶようにした。  
-`staticFiles` は `/posts/[slug]/index.md` からブログのデータを取ってくるときに一緒にディレクトリの中を見て持ってきてる。  
-かなりのゴリ押し。もっといい書き方も普通にありそうだけど、一旦動けばいいでこんな感じにしちゃった。  
+`staticFiles` は `/posts/[slug]/index.md` からブログのデータを取ってくるときに一緒に `/posts/[slug]/static` ディレクトリの中を見てファイル名を持ってきてる。  
+かなりのゴリ押し。もっといい書き方も普通にありそうだけど、一旦動けばいいでこんな感じにしちゃった。
 とりあえず動いたので :yoshi:
 
+`/posts/[slug]/index.md` からみた `static/hoge.jpg` は生成される HTML からみた `static/hoge.jpg` と同じなので、`index.md` 上のプレビューでも表示されるし、出力された HTML でも表示できる。  
 変更してみたら確かに読み込みが早くなった気がする。
 
 ファイルを `/public` 配下に書き込んじゃえばいいんじゃんというのはこのブログを見ていて思った。なんでかそれまでは思いつかなかった。  
