@@ -56,7 +56,7 @@ const processedContent = await unified()
 エラーが示していた場所はここ。
 <https://github.com/remarkjs/remark-embed-images/blob/main/index.js#L27>
 
-`path` が関係あるのかと思いきや、`path` の引数が `undefined` の場合もこういうエラーが出るらしい。
+入れている `path` が関係あるのかと思いきや、`path` の引数が `undefined` の場合もこういうエラーが出るらしい。（※追記：エラー文に書いてあるじゃん！）
 VSCode で特に何もせず使えたデバッガーを利用して変数の中身を見てみると、どうやら `file.dirname` が原因だろうというところまでわかった。
 
 じゃあ `file` はなんなの？となるけど、コードを見てもいまいち分からず・・・
