@@ -30,7 +30,7 @@ index.md から画像への相対的な位置が違うので、どっちか（�
 同名のファイルがあった場合は後に同じ処理が走った時点で新しいファイルで上書きされそうな気がするけど、そこはまあ運用でカバーする。
 
 ```ts
-const salvageStaticFiles = (slug: string, staticFiles: string[]) => {
+const copyStaticFiles = (slug: string, staticFiles: string[]) => {
     staticFiles.forEach(staticFile => {
         fs.mkdirSync(path.join(process.cwd(), 'public/posts/static'), { recursive: true })
         fs.copyFileSync(
