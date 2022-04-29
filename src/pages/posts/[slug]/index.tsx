@@ -5,6 +5,7 @@ import { ParsedUrlQuery } from 'node:querystring'
 import fs from 'fs'
 import path from 'path'
 import { ALL_POSTS, getPostData, Post } from '@/lib/posts'
+import { useEffect, useState } from 'react'
 
 interface Param extends ParsedUrlQuery {
     slug: string
@@ -38,27 +39,35 @@ export const getStaticProps: GetStaticProps<Post, Param> = async context => {
     return { props: data }
 }
 
-const PostPage = ({
-    title,
-    content,
-    published,
-    tags,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const PostPage = (postData: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const [post, setPost] = useState(postData)
+
+    if (process.env.NODE_ENV !== 'production') {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+            const fn = async () => {
+                const res = await fetch(`/api/posts/${post.slug}`).then(res => res.json())
+                setPost(res.post)
+            }
+            fn()
+        }, [post.slug])
+    }
+
     return (
         <>
-            <Meta title={title} type="article" />
-            <div className={styles.published}>{published}</div>
-            <h1 className={styles.title}>{title}</h1>
-            {tags && (
+            <Meta title={post.title} type="article" />
+            <div className={styles.published}>{post.published}</div>
+            <h1 className={styles.title}>{post.title}</h1>
+            {post.tags && (
                 <p className={styles.tags}>
-                    {tags.map((tag, index) => (
+                    {post.tags.map((tag, index) => (
                         <span className={styles.tag} key={index}>
                             {tag}
                         </span>
                     ))}
                 </p>
             )}
-            <div className={styles.content} dangerouslySetInnerHTML={{ __html: content }} />
+            <div className={styles.content} dangerouslySetInnerHTML={{ __html: post.content }} />
         </>
     )
 }
