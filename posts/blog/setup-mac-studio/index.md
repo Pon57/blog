@@ -17,8 +17,8 @@ tags: [Mac]
 ### ブログ環境構築
 
 [このブログはNext.jsを使って作られている](/posts/create-a-blog)ので、Node.jsの環境が必要。  
-[M1 Macのセットアップ・メモ](https://zenn.dev/catnose99/scraps/e1a2c41e9bf09c)を見てbrewからyarnまでセットアップしました。これも特にハマリポイントはなく、LTSのやつを選択して終わり。  
-ちなみにanyenvを前は使っていた気がするけど、なんか遅いらしい（[anyenvが遅いので実行時間を計測して感謝しつつ卒業した](https://alpacat.com/blog/bye-anyenv)）のでまあとりあえず使わなくていっかってなったので使ってません。  
+Zennの[M1 Macのセットアップ・メモ](https://zenn.dev/catnose99/scraps/e1a2c41e9bf09c)を見てbrewからyarnまでセットアップしました。これも特にハマリポイントはなく、LTSのやつを選択して終わり。  
+ちなみにanyenvを前は使っていた気がするけど、なんか遅いらしい（[anyenvが遅いので実行時間を計測して感謝しつつ卒業した - アルパカログ](https://alpacat.com/blog/bye-anyenv)）のでまあとりあえず使わなくていっかってなったので使ってません。  
 特に自分で計測とかはしておらず、不満に感じたこともないけど、anyenvがあったことによる恩恵を感じるほど触ったこともないのであった・・・。  
 あとは `git clone` して `yarn install` して `yarn dev` で動いていることを確認。
 
