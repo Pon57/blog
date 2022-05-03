@@ -69,7 +69,7 @@ Apple Silicon対応した時やOSアップデート時とかにそうするこ�
 
 #### 映像出力おまけ
 
-ディスプレイへの出力には今現在はモニターに直接挿していますが、ゲーム周りは[ATEM Mini](https://amzn.to/3FffBoz)で統一されています。これもその仲間に入れたいんですが、ATEM Miniに直接Macから出したHDMIを接続すると色がおかしくなります。「ATEM Mini mac 色」とかで検索するといっぱい出てきます。  
+ディスプレイへの出力には今現在はモニターに直接挿していますが、ゲーム周りは[ATEM Mini](https://www.blackmagicdesign.com/jp/products/atemmini)で統一されています。これもその仲間に入れたいんですが、ATEM Miniに直接Macから出したHDMIを接続すると色がおかしくなります。「ATEM Mini mac 色」とかで検索するといっぱい出てきます。  
 改めて調べ直したところ[【色が変】Macの画面をATEM miniに入力すると画質が変わる問題｜doom｜note](https://note.com/ocdp10ply/n/n7b03157bbcbf)を見つけました。そこに書いてある[Amazon | 【国内正規品】Blackmagic Design コンバーター Micro Converter BiDirect SDI/HDMI 3G](https://amzn.to/3OELUli)を購入してみて間に挟んだところ、自分では気にならないくらいに改善したので最高となりました。
 
 ### Magic Trackpad
