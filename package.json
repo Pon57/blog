@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next-remote-watch posts",
+        "dev": "PORT=8000 next-remote-watch posts",
         "build": "next build",
         "export": "next export",
         "start": "next start",
