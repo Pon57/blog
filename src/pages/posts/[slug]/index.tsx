@@ -4,7 +4,7 @@ import Meta from '@/components/Meta'
 import { ParsedUrlQuery } from 'node:querystring'
 import fs from 'fs'
 import path from 'path'
-import { ALL_POSTS, getPostData, Post } from '@/lib/posts'
+import { ALL_POSTS, ApiResponse, getPostData, Post } from '@/lib/posts'
 import { useEffect, useState } from 'react'
 
 interface Param extends ParsedUrlQuery {
@@ -46,7 +46,9 @@ const PostPage = (postData: InferGetStaticPropsType<typeof getStaticProps>) => {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
             const fn = async () => {
-                const res = await fetch(`/api/posts/${post.slug}`).then(res => res.json())
+                const res = (await fetch(`/api/posts/${post.slug}`).then(res =>
+                    res.json(),
+                )) as ApiResponse
                 setPost(res.post)
             }
             fn()

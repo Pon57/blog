@@ -33,6 +33,10 @@ export type Post = {
     staticFiles: string[]
 }
 
+export type ApiResponse = {
+    post: Post
+}
+
 const BLOG_DIRECTORIE = path.join(process.cwd(), 'posts/blog')
 const ALL_BLOG_POSTS = (() => {
     const allDirents = fs.readdirSync(BLOG_DIRECTORIE, { withFileTypes: true })
