@@ -13,7 +13,7 @@
     "dependencies": {
         "gray-matter": "^4.0.3",
         "minireset.css": "^0.0.7",
-        "next": "^12.1.5",
+        "next": "^13.0.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "rehype-external-links": "^3.0.0",
@@ -37,7 +37,7 @@
         "@typescript-eslint/parser": "^4.31.1",
         "better-typescript-lib": "^2.0.0",
         "eslint": "^8.0.0",
-        "eslint-config-next": "11.1.4",
+        "eslint-config-next": "13.4.19",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-prettier": "^5.0.0",
         "eslint-plugin-react": "^7.25.2",
