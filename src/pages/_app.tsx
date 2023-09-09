@@ -17,8 +17,8 @@ export default function App({ Component, pageProps }: AppProps) {
             <GoogleAnalytics />
             <div className={styles.site}>
                 <header className={styles.heading}>
-                    <Link href="/">
-                        <a className={styles.brand}>ぽんブログ</a>
+                    <Link href="/" className={styles.brand}>
+                        ぽんブログ
                     </Link>
                 </header>
                 <div className={styles.content}>
@@ -26,10 +26,8 @@ export default function App({ Component, pageProps }: AppProps) {
                 </div>
                 <footer className={styles.footer}>
                     © 2021{' '}
-                    <Link href="https://twitter.com/pon_dev">
-                        <a target="_blank" rel="noreferrer">
-                            Pon
-                        </a>
+                    <Link href="https://twitter.com/pon_dev" target="_blank" rel="noreferrer">
+                        Pon
                     </Link>
                 </footer>
             </div>

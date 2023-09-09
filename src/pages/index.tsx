@@ -18,18 +18,18 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
             <div className={styles.tabs}>
                 <ul className={styles.tab}>
                     <li>
-                        <Link href="/posts">
-                            <a className={styles.tabItem}>全部</a>
+                        <Link href="/posts" className={styles.tabItem}>
+                            全部
                         </Link>
                     </li>
                     <li>
-                        <Link href="/">
-                            <a className={`${styles.tabItem} ${styles.selected}`}>ブログ</a>
+                        <Link href="/" className={`${styles.tabItem} ${styles.selected}`}>
+                            ブログ
                         </Link>
                     </li>
                     <li>
-                        <Link href="/diaries">
-                            <a className={styles.tabItem}>日記</a>
+                        <Link href="/diaries" className={styles.tabItem}>
+                            日記
                         </Link>
                     </li>
                 </ul>
@@ -38,24 +38,22 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                 {posts.map((post, index) => (
                     <article className={styles.article} key={index}>
                         <Link href="/posts/[slug]" as={`/posts/${post.slug}`}>
-                            <a>
-                                <div>
-                                    <h1 className={styles.title}>{post.title}</h1>
-                                    <p className={styles.content}>{post.content.substr(0, 300)}</p>
-                                    <div className={styles.meta}>
-                                        {post.tags && (
-                                            <p className={styles.tags}>
-                                                {post.tags?.map((tag, index) => (
-                                                    <span className={styles.tag} key={index}>
-                                                        {tag}
-                                                    </span>
-                                                ))}
-                                            </p>
-                                        )}
-                                        <p className={styles.published}>{post.published}</p>
-                                    </div>
+                            <div>
+                                <h1 className={styles.title}>{post.title}</h1>
+                                <p className={styles.content}>{post.content.substr(0, 300)}</p>
+                                <div className={styles.meta}>
+                                    {post.tags && (
+                                        <p className={styles.tags}>
+                                            {post.tags?.map((tag, index) => (
+                                                <span className={styles.tag} key={index}>
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </p>
+                                    )}
+                                    <p className={styles.published}>{post.published}</p>
                                 </div>
-                            </a>
+                            </div>
                         </Link>
                     </article>
                 ))}
