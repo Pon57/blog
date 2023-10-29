@@ -1,4 +1,5 @@
 module.exports = {
+    output: 'export',
     reactStrictMode: true,
     webpack: (config, { isServer }) => {
         if (!isServer) {
