@@ -1,12 +1,11 @@
-name: github pages
+name: pr
 
 on:
-    push:
-        branches:
-            - main
+    pull_request:
+        types: [opened, synchronize, reopened]
 
 jobs:
-    build-deploy:
+    build:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4.1.1
@@ -29,12 +28,3 @@ jobs:
 
             - name: build
               run: yarn build
-
-            - name: add nojekyll
-              run: touch ./out/.nojekyll
-
-            - name: deploy
-              uses: peaceiris/actions-gh-pages@v3.9.3
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./out
