@@ -40,7 +40,7 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                         <Link href="/posts/[slug]" as={`/posts/${post.slug}`}>
                             <div>
                                 <h1 className={styles.title}>{post.title}</h1>
-                                <p className={styles.content}>{post.content.substr(0, 300)}</p>
+                                <p className={styles.content}>{post.content.substring(0, 250)}</p>
                                 <div className={styles.meta}>
                                     {post.tags && (
                                         <p className={styles.tags}>

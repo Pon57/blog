@@ -3,13 +3,14 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "PORT=8000 next-remote-watch posts",
+        "dev": "PORT=8000 concurrently \"next dev\" \"tsx ./watcher.ts\" --kill-others",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
         "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css,scss}'"
     },
     "dependencies": {
+        "concurrently": "^8.2.2",
         "gray-matter": "^4.0.3",
         "minireset.css": "^0.0.7",
         "next": "^14.0.0",
@@ -25,12 +26,15 @@
         "remark-images": "^4.0.0",
         "remark-parse": "^11.0.0",
         "remark-rehype": "^11.0.0",
-        "unified": "^11.0.0"
+        "tsx": "^4.7.1",
+        "unified": "^11.0.0",
+        "ws": "^8.16.0"
     },
     "devDependencies": {
         "@types/node": "^20.0.0",
         "@types/react": "^18.0.0",
         "@types/react-dom": "^18.0.0",
+        "@types/ws": "^8.5.10",
         "@typescript-eslint/eslint-plugin": "^6.0.0",
         "@typescript-eslint/parser": "^6.0.0",
         "better-typescript-lib": "^2.0.0",
@@ -41,7 +45,6 @@
         "eslint-plugin-react": "^7.25.2",
         "eslint-plugin-react-hooks": "^4.2.0",
         "markuplint": "^4.0.0",
-        "next-remote-watch": "^2.0.0",
         "prettier": "^3.0.0",
         "typescript": "^5.0.0"
     }
