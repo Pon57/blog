@@ -7,30 +7,33 @@ import styles from './_app.module.css'
 import Link from 'next/link'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { useEffect } from 'react'
+import AutoRefresh from '../components/AutoRefresh'
 
 export default function App({ Component, pageProps }: AppProps) {
     useEffect(() => {
         document.documentElement.setAttribute('prefix', 'og: http://ogp.me/ns#')
     })
     return (
-        <>
-            <GoogleAnalytics />
-            <div className={styles.site}>
-                <header className={styles.heading}>
-                    <Link href="/" className={styles.brand}>
-                        ぽんブログ
-                    </Link>
-                </header>
-                <div className={styles.content}>
-                    <Component {...pageProps} />
+        <AutoRefresh>
+            <>
+                <GoogleAnalytics />
+                <div className={styles.site}>
+                    <header className={styles.heading}>
+                        <Link href="/" className={styles.brand}>
+                            ぽんブログ
+                        </Link>
+                    </header>
+                    <div className={styles.content}>
+                        <Component {...pageProps} />
+                    </div>
+                    <footer className={styles.footer}>
+                        © 2021{' '}
+                        <Link href="https://twitter.com/pon_dev" target="_blank" rel="noreferrer">
+                            Pon
+                        </Link>
+                    </footer>
                 </div>
-                <footer className={styles.footer}>
-                    © 2021{' '}
-                    <Link href="https://twitter.com/pon_dev" target="_blank" rel="noreferrer">
-                        Pon
-                    </Link>
-                </footer>
-            </div>
-        </>
+            </>
+        </AutoRefresh>
     )
 }
