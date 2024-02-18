@@ -94,11 +94,11 @@ DB 周りには [SeaORM](https://www.sea-ql.org/SeaORM/) という ORM を使っ
 
 開発環境用の Dockerfile を書いて DevContainer を使って VSCode で開発しています。
 
-#### Mold
+#### mold
 
 [rui314/mold: Mold: A Modern Linker 🦠](https://github.com/rui314/mold)
 
-リンカーに [Mold](https://github.com/rui314/mold) というものを使っています。[cargo-watch](https://crates.io/crates/cargo-watch) を使って保存するたびにコンパイルが走るみたいな感じにしてるんですが、露骨にスピードアップを感じます。おすすめ。
+リンカーに [mold](https://github.com/rui314/mold) というものを使っています。[cargo-watch](https://crates.io/crates/cargo-watch) を使って保存するたびにコンパイルが走るみたいな感じにしてるんですが、露骨にスピードアップを感じます。おすすめ。
 
 #### OrbStack
 
@@ -156,7 +156,7 @@ DB マイグレーションは ECS のクラスターでタスクとして動か
 
 #### Renovate
 
-バージョンアップには [Renovate](https://www.mend.io/renovate/) を使ってます。勝手に Pull Request を作ってくれるので便利です。開発環境用の Dockerfile では [Mold](https://github.com/rui314/mold) のコンパイルや [cargo-watch](https://crates.io/crates/cargo-watch) 等の install をしているんですが、それのバージョン更新だけ拾えなかったので `regexManagers` で拾えるように設定してます。
+バージョンアップには [Renovate](https://www.mend.io/renovate/) を使ってます。勝手に Pull Request を作ってくれるので便利です。開発環境用の Dockerfile では [mold](https://github.com/rui314/mold) のコンパイルや [cargo-watch](https://crates.io/crates/cargo-watch) 等の install をしているんですが、それのバージョン更新だけ拾えなかったので `regexManagers` で拾えるように設定してます。
 
 ## リリース
 
