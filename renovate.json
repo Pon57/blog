@@ -1,28 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base",
-    ":timezone(Asia/Tokyo)"
-  ],
-  "labels": [
-    "Renovate"
-  ],
+  "extends": ["config:recommended", ":timezone(Asia/Tokyo)"],
+  "labels": ["Renovate"],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 5,
   "dependencyDashboard": true,
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "patch"
-      ],
+      "matchUpdateTypes": ["patch"],
       "automerge": true
     }
   ],
   "internalChecksFilter": "strict",
   "major": {
-    "stabilityDays": 2
+    "minimumReleaseAge": "2 days"
   },
   "minor": {
-    "stabilityDays": 1
+    "minimumReleaseAge": "1 day"
   }
 }
