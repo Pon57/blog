@@ -7,7 +7,6 @@ module.exports = {
         }
         return config
     },
-    swcMinify: true,
 }
 
 // https://miyaoka.dev/posts/2020-12-31-hmr-on-markdown
