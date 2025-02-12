@@ -37,7 +37,7 @@ macOS でいつもの位置で Cmd を使え、Windows でも macOS と同じ位
 
 無変換・変換キーの位置は macOS ではかな・英数キーになっていて、macOS では変換ボタンの役割はなく IME のオンオフなので、Windows もそれに合わせます。
 
-設定 > 時刻と言語 > 言語と地域 > オプション > Microsoft IME > キータッチのカスタマイズ でキーの割り当てを変更します。
+設定 > 時刻と言語 > 言語と地域 > 日本語の言語のオプション > Microsoft IME のキーボードオプション > キータッチのカスタマイズ でキーの割り当てを変更します。
 
 - 無変換キー -> IME-オフ
 - 変換キー -> IME-オン
@@ -54,13 +54,13 @@ macOS でいつもの位置で Cmd を使え、Windows でも macOS と同じ位
 - PC キーボードの無変換キー -> 英数キー
 - PC キーボードの変換キー -> かなキー
 
-![karabiner-ime](./static/karabiner-ime.png)
+![karabiner-ime](./static/hhkb-karabiner-ime.png)
 
 次に、Ctrl R を Cmd に割り当てます。この際 Control を設定してしまうと左側の Control キーも使えなくなってしまうため、右側の Control キー（Ctrl R）を割り当てることで回避しています。
 
 そして、最終的にはこうなります。
 
-![karabiner](./static/karabiner.png)
+![karabiner](./static/hhkb-karabiner.png)
 
 これで、HHKB を Windows と macOS で切り替えてもそのまま使えるように設定できました。一般的な Windows で使う JIS 配列のキーボードとは少しだけ違いますが、HHKB としてはどちらでもほぼそのまま使えると思います。
 
