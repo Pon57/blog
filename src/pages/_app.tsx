@@ -27,10 +27,16 @@ export default function App({ Component, pageProps }: AppProps) {
                         <Component {...pageProps} />
                     </div>
                     <footer className={styles.footer}>
-                        © 2021{' '}
-                        <Link href="https://twitter.com/pon_dev" target="_blank" rel="noreferrer">
-                            Pon
-                        </Link>
+                        <div className={styles.link}>
+                            <Link href="/privacy-policy">プライバシーポリシー</Link>
+                            <Link href="/disclaimer">免責事項</Link>
+                        </div>
+                        <div>
+                            © 2021{' '}
+                            <Link href="https://twitter.com/pon_dev" target="_blank">
+                                Pon
+                            </Link>
+                        </div>
                     </footer>
                 </div>
             </>

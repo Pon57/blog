@@ -1,21 +1,21 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":timezone(Asia/Tokyo)"],
-  "labels": ["Renovate"],
-  "prHourlyLimit": 0,
-  "prConcurrentLimit": 5,
-  "dependencyDashboard": true,
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["patch"],
-      "automerge": true
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended", ":timezone(Asia/Tokyo)"],
+    "labels": ["Renovate"],
+    "prHourlyLimit": 0,
+    "prConcurrentLimit": 5,
+    "dependencyDashboard": true,
+    "packageRules": [
+        {
+            "matchUpdateTypes": ["patch"],
+            "automerge": true
+        }
+    ],
+    "internalChecksFilter": "strict",
+    "major": {
+        "minimumReleaseAge": "2 days"
+    },
+    "minor": {
+        "minimumReleaseAge": "1 day"
     }
-  ],
-  "internalChecksFilter": "strict",
-  "major": {
-    "minimumReleaseAge": "2 days"
-  },
-  "minor": {
-    "minimumReleaseAge": "1 day"
-  }
 }
