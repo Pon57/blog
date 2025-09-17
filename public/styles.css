@@ -62,6 +62,36 @@ blockquote cite {
     font-size: 0.9em;
 }
 
+:where(.twitter-tweet) {
+    margin: 24px auto;
+    max-width: 550px;
+    width: 100%;
+    display: block;
+}
+
+:where(blockquote.twitter-tweet) {
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+:where(blockquote.twitter-tweet) p {
+    margin: 0;
+    color: inherit;
+}
+
+.twitter-embed-permalink {
+    display: none;
+}
+
+:where(.twitter-tweet iframe),
+:where(iframe.twitter-tweet),
+:where(iframe.twitter-tweet-rendered) {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 img {
     max-height: 420px;
 }

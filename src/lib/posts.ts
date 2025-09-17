@@ -12,6 +12,7 @@ import remarkEmoji from 'remark-emoji'
 import remarkGfm from 'remark-gfm'
 import remarkImages from 'remark-images'
 import remarkParse from 'remark-parse'
+import rehypeTwitterEmbed from './rehype-twitter-embed'
 
 type MatterResult = {
     content: string
@@ -134,6 +135,7 @@ export async function getPostData(slug: string): Promise<Post> {
         .use(remarkEmoji)
         .use(remarkGfm)
         .use(remark2rehype)
+        .use(rehypeTwitterEmbed)
         .use(rehypeExternalLinks)
         .use(rehypeHighlight)
         .use(rehypeSlug)
