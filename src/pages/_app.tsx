@@ -18,7 +18,8 @@ export default function App({ Component, pageProps }: AppProps) {
         document.documentElement.setAttribute('prefix', 'og: http://ogp.me/ns#')
     })
     useEffect(() => {
-        const twttr = (window as typeof window & { twttr?: { widgets?: { load?: () => void } } }).twttr
+        const twttr = (window as typeof window & { twttr?: { widgets?: { load?: () => void } } })
+            .twttr
         twttr?.widgets?.load?.()
     }, [router.asPath])
     return (

@@ -98,7 +98,10 @@ function ensurePermalinkAnchor(blockquote: Element, href: string) {
 
     if (existing) {
         existing.properties = existing.properties ?? {}
-        existing.properties.className = mergeClassNames(existing.properties.className, 'twitter-embed-permalink')
+        existing.properties.className = mergeClassNames(
+            existing.properties.className,
+            'twitter-embed-permalink',
+        )
         existing.properties['aria-hidden'] = 'true'
         existing.properties.tabIndex = -1
         return
@@ -126,7 +129,10 @@ function ensurePermalinkAnchor(blockquote: Element, href: string) {
 
 function markAsTweet(blockquote: Element) {
     blockquote.properties = blockquote.properties ?? {}
-    blockquote.properties.className = mergeClassNames(blockquote.properties.className, 'twitter-tweet')
+    blockquote.properties.className = mergeClassNames(
+        blockquote.properties.className,
+        'twitter-tweet',
+    )
     blockquote.properties['data-twitter-embed'] = 'true'
 }
 
