@@ -41,6 +41,15 @@ p {
     margin: 10px 0;
 }
 
+:root {
+    --youtube-embed-crop: 1px;
+}
+
+iframe {
+    border: none;
+    display: block;
+}
+
 /* https://saruwakakun.com/html-css/reference/blockquote */
 blockquote {
     position: relative;
@@ -90,6 +99,42 @@ blockquote cite {
 :where(iframe.twitter-tweet-rendered) {
     margin-left: auto !important;
     margin-right: auto !important;
+}
+
+.youtube-embed {
+    margin: 24px auto;
+    max-width: 720px;
+    width: 100%;
+}
+
+.youtube-embed-frame {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: transparent;
+}
+
+.youtube-embed-frame iframe {
+    position: absolute;
+    top: calc(-1 * var(--youtube-embed-crop));
+    left: calc(-1 * var(--youtube-embed-crop));
+    width: calc(100% + var(--youtube-embed-crop) * 2);
+    height: calc(100% + var(--youtube-embed-crop) * 2);
+    border: 0;
+    border-radius: inherit;
+}
+
+.youtube-embed-fallback {
+    margin: 8px 0 0;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+.youtube-embed-fallback-link {
+    color: inherit;
+    text-decoration: underline;
 }
 
 img {
