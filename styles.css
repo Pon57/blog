@@ -118,7 +118,6 @@ blockquote cite {
 
 .youtube-embed-frame iframe {
     position: absolute;
-    top: calc(-1 * var(--youtube-embed-crop));
     left: calc(-1 * var(--youtube-embed-crop));
     width: calc(100% + var(--youtube-embed-crop) * 2);
     height: calc(100% + var(--youtube-embed-crop) * 2);
