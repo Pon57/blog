@@ -13,6 +13,7 @@ import remarkGfm from 'remark-gfm'
 import remarkImages from 'remark-images'
 import remarkParse from 'remark-parse'
 import rehypeTwitterEmbed from './rehype-twitter-embed'
+import rehypeYoutubeEmbed from './rehype-youtube-embed'
 
 type MatterResult = {
     content: string
@@ -136,6 +137,7 @@ export async function getPostData(slug: string): Promise<Post> {
         .use(remarkGfm)
         .use(remark2rehype)
         .use(rehypeTwitterEmbed)
+        .use(rehypeYoutubeEmbed)
         .use(rehypeExternalLinks)
         .use(rehypeHighlight)
         .use(rehypeSlug)

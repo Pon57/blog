@@ -26,7 +26,8 @@ tags: [Conference, Android]
 ### プロダクトレベルで必要になる Jetpack Compose テクニック
 
 - <https://droidkaigi.jp/2021/timetable/276801?day=1>
-- <https://youtu.be/_5vP-NIRUCM>
+
+https://youtu.be/_5vP-NIRUCM
 
 今まさに Jetpack Compose を利用したアプリを作ろう！となっているので、画面遷移関連や便利ライブラリ等は特に今欲しかったものだ！！となりました。というか発表内容の殆どが今欲しいものなのでは？という感じ。
 
@@ -38,7 +39,8 @@ tags: [Conference, Android]
 ### Androidエンジニアが1人という不安と向き合う
 
 - <https://droidkaigi.jp/2021/timetable/277386?day=1>
-- <https://youtu.be/5M0xJLdAcAE>
+
+https://youtu.be/5M0xJLdAcAE
 
 自分は2019年入社後2021年現在までチームで Android エンジニアが1人という環境にいます。業務も3年目になって不安を感じている真っ最中なので、これは絶対に聴こうと思っていました。
 スライドに書いてある「これまでに抱えてきた不安」は自分も本当にそう感じていて、うわ〜〜〜やっぱそれ悩むよね〜〜〜っていう感じでなんか面白かった。
@@ -65,7 +67,8 @@ tags: [Conference, Android]
 ### ★2.2のアプリがIn-App Review APIを導入して★4.2になるまで
 
 - <https://droidkaigi.jp/2021/timetable/277349?day=2>
-- <https://youtu.be/PvAw4jNQc10>
+
+https://youtu.be/PvAw4jNQc10
 
 現在業務でストアレビューを良くしようタスクに着手している最中で、過去に[In-App Review APIでAndroidアプリレビューがめちゃくちゃ改善した話｜neuet / チャリチャリ｜note](https://note.com/neuet/n/n7b6d1f340606)を読んでいたので、より詳しく聴きたいなと思っていました。
 
@@ -82,7 +85,8 @@ tags: [Conference, Android]
 ### 触って学ぶAccessibility
 
 - <https://droidkaigi.jp/2021/timetable/276229?day=2>
-- <https://youtu.be/Rch-Uqk8MkA>
+
+https://youtu.be/Rch-Uqk8MkA
 
 お恥ずかしながら、自分は Accessibility を考えて実装したことが殆どありませんでした。存在は知っています。
 実際にやるべきこととかは特に分かっておらず、そもそもどういった方法で操作をしているのかもあまり知りませんでした。
@@ -94,7 +98,8 @@ tags: [Conference, Android]
 ### 2021年こそアクセシビリティと向き合おう
 
 - <https://droidkaigi.jp/2021/timetable/276232?day=3>
-- <https://www.youtube.com/watch?v=RfSqaGQTXOY>
+
+https://www.youtube.com/watch?v=RfSqaGQTXOY
 
 ボタンを正確に押せない・複雑な操作が難しいとかの視点は持てていなく、想像することもできていなかったです。今までだと、押せるか押せないか、見えるか見えないかくらいしか想像できていなく、ハッとしました。
 また、「うるさい場所では何も聞こえない」や「その言語が堪能ではないのでトーストが消えるまでに読めない」等の状況的障害は、たしかに。と思いました。
@@ -104,7 +109,8 @@ tags: [Conference, Android]
 ### いかにしてアプリの起動時間を改善するか
 
 - <https://droidkaigi.jp/2021/timetable/272862?day=3>
-- <https://youtu.be/8z0fKUcC110>
+
+https://youtu.be/8z0fKUcC110
 
 今までパフォーマンスを特に意識した改善とかをやったことがなかったので、実際どういうふうにやっていくんだろうというのは興味がありました。
 
