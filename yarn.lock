@@ -917,9 +917,9 @@
     undici-types "~6.21.0"
 
 "@types/node@^24.0.0":
-  version "24.9.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.9.2.tgz#90ded2422dbfcafcf72080f28975adc21366148d"
-  integrity sha512-uWN8YqxXxqFMX2RqGOrumsKeti4LlmIMIyV0lgut4jx7KQBcBiW6vkDtIBvHnHIquwNfJhk8v2OtmO8zXWHfPA==
+  version "24.10.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.10.3.tgz#e0bde7b6bfa2342e88bf158d177dc110e608520e"
+  integrity sha512-gqkrWUsS8hcm0r44yn7/xZeV1ERva/nLgrLxFRUGb7aoNMIJfZJ3AC261zDQuOAKC7MiXai1WCpYc48jAHoShQ==
   dependencies:
     undici-types "~7.16.0"
 
