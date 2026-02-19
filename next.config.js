@@ -2,12 +2,7 @@ module.exports = {
     output: 'export',
     reactStrictMode: true,
     typedRoutes: true,
-    webpack: (config, { isServer }) => {
-        if (!isServer) {
-            config.resolve.fallback.fs = false
-        }
-        return config
-    },
+    turbopack: {},
 }
 
 // https://miyaoka.dev/posts/2020-12-31-hmr-on-markdown
