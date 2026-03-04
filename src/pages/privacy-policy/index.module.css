@@ -7,3 +7,17 @@
     margin-top: 30px;
     font-size: 14px;
 }
+
+.history {
+    margin: 0 8px;
+}
+
+.historyItem {
+    display: flex;
+    gap: 1em;
+    margin: 2px 0;
+}
+
+.historyItem time {
+    flex-shrink: 0;
+}

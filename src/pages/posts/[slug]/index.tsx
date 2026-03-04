@@ -54,8 +54,6 @@ const PostPage = (post: InferGetStaticPropsType<typeof getStaticProps>) => {
                 </p>
             )}
             <div className={styles.content} dangerouslySetInnerHTML={{ __html: post.content }} />
-            {/* prettier-ignore */}
-            <div className={styles.footer}>※サイト内の商品リンクは一部アフィリエイトリンクとなっています。</div>
         </>
     )
 }
