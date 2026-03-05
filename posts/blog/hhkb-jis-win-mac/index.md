@@ -5,14 +5,16 @@ publishedIndex: 0
 tags: [HHKB]
 ---
 
+※2026/03/05 追記：設定を少し見直しました。
+
 普段 HHKB HYBRID の JIS 配列を使っていますが、macOS と Windows を同じデバイスで切り替えて使っていると、いくつか問題とは言えなくとも違和感を感じることがあります。
 
 前提条件として、背面スイッチは全てオフの状態で使っています。  
 <https://happyhackingkb.com/jp/products/discontinued/hhkb_backview.html>
 
-- Windows の Ctrl 関連のショートカットは macOS では Cmd になる。
-  - ついでに macOS の Cmd は Windows では Win キーになる。
-- スペースの両横にあるキーは Windows では無変換と変換だが、macOS だとそもそも使えない。（Windows モードの場合）
+- Windows の Ctrl 関連のショートカットは macOS では Cmd になりがち。
+    - ついでに macOS の Cmd は Windows では Win キーになる。
+- スペースの両横にあるキーは Windows では「無変換」「変換」だが、macOS だとそもそも使えない。（Windows モードの場合）
 
 これらは問題とは言えませんが、頻繁に切り替えて使っているとそれなりにストレスになります。また、Windows モードと Macintosh モードをキーで切り替えることも可能ですが、変更したかどうかに脳のリソースを持っていかれるため避けたいです。  
 そこで、それらをいい感じに解消できる設定をしばらく使っていたので、その設定を備忘録として残しておきます。
@@ -35,7 +37,7 @@ macOS でいつもの位置で Cmd を使え、Windows でも macOS と同じ位
 
 ## Windows での設定 （お好み）
 
-無変換・変換キーの位置は macOS ではかな・英数キーになっていて、macOS では変換ボタンの役割はなく IME のオンオフなので、Windows もそれに合わせます。
+「無変換」「変換」は macOS では「英数」「かな」になっていて、macOS では変換ボタンの役割はなく IME のオン/オフなので、Windows もそれに合わせます。
 
 設定 > 時刻と言語 > 言語と地域 > 日本語の言語のオプション > Microsoft IME のキーボードオプション > キータッチのカスタマイズ でキーの割り当てを変更します。
 
@@ -44,12 +46,16 @@ macOS でいつもの位置で Cmd を使え、Windows でも macOS と同じ位
 
 ![windows-ime](./static/windows-ime.png)
 
+ちなみに、Windows にこの設定を入れるのであれば、そもそも「英数」「かな」と設定するのでもいいですね。
+
+![keymap-win-ime](./static/hhkb-keymap-win-ime.png)
+
 ## macOS での設定
 
 このままではかな・英数キーが使えないため、Karabiner-Elements を使って設定します。  
 <https://karabiner-elements.pqrs.org/>
 
-まず、かな英数キーを使えるように設定します。  
+まず、かな英数キーを使えるように設定します。(「英数」「かな」と設定している場合は不要です)
 
 - PC キーボードの無変換キー -> 英数キー
 - PC キーボードの変換キー -> かなキー
@@ -66,5 +72,5 @@ macOS でいつもの位置で Cmd を使え、Windows でも macOS と同じ位
 
 ## おまけ
 
-実は今は HHKB の JIS 配列のものを US 配列として使ってみています。（だから忘れないうちにこの記事を書いた）  
-これは色々試してみている段階で、慣れてきて使っていこうとなったらまた設定を残しておこうと思います。
+実は今は HHKB の JIS 配列のものを US 配列として使っています。おすすめです。  
+[HHKBのJIS配列をUS配列としていい感じに使う](/posts/hhkb-jis-us)
