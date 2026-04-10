@@ -52,23 +52,11 @@ macOS でいつもの位置で Cmd を使え、Windows でも macOS と同じ位
 
 ## macOS での設定
 
-このままではかな・英数キーが使えないため、Karabiner-Elements を使って設定します。  
-<https://karabiner-elements.pqrs.org/>
-
-まず、かな英数キーを使えるように設定します。(「英数」「かな」と設定している場合は不要です)
-
-- PC キーボードの無変換キー -> 英数キー
-- PC キーボードの変換キー -> かなキー
-
-![karabiner-ime](./static/hhkb-karabiner-ime.png)
-
-次に、Ctrl R を Cmd に割り当てます。この際 Control を設定してしまうと左側の Control キーも使えなくなってしまうため、右側の Control キー（Ctrl R）を割り当てることで回避しています。
-
-そして、最終的にはこうなります。
+Ctrl R を Cmd に割り当てます。この際 Control を設定してしまうと左側の Control キーも使えなくなってしまうため、右側の Control キー（Ctrl R）を割り当てたに使ったというわけですね。
 
 ![karabiner](./static/hhkb-karabiner.png)
 
-これで、HHKB を Windows と macOS で切り替えてもそのまま使えるように設定できました。一般的な Windows で使う JIS 配列のキーボードとは少しだけ違いますが、HHKB としてはどちらでもほぼそのまま使えると思います。
+これで、HHKB を Windows と macOS で都度設定の変更なくそのまま使えるように設定できました。一般的な Windows で使う JIS 配列のキーボードとは少しだけ違いますが、HHKB としてはどちらでもほぼそのまま使えると思います。
 
 ## おまけ
 

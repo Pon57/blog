@@ -52,7 +52,7 @@ MacBook についているキーボードも JIS のものを使っていて、H
 
 そして、HHKB のキーマップ変更と同様 JIS の `¥` と `|` の場所が使えないので MacBook のキーボードでもそれが使えるように設定します。
 
-- international3 -> grave_accent_and_tilde(`)
+- `[International keys > international3]` -> ``[Controls and symbold > grave_accent_and_tilde(`)]``
 
 ![karabiner](./static/hhkb-jis-us-karabiner.png)
 
