@@ -40,49 +40,22 @@ export type ApiResponse = {
 }
 
 const BLOG_DIRECTORIE = path.join(process.cwd(), 'posts/blog')
-const ALL_BLOG_POSTS = (() => {
-    const allDirents = fs.readdirSync(BLOG_DIRECTORIE, { withFileTypes: true })
-
-    return allDirents
-        .filter(dirent => dirent.isDirectory())
-        .map(dirent => {
-            const fullPath = path.join(BLOG_DIRECTORIE, dirent.name, 'index.md')
-            const fileContent = fs.readFileSync(fullPath, 'utf8')
-            const matterResult = matter(fileContent)
-            const matterResultData = matterResult.data as MatterResult['data']
-
-            let staticFiles: string[]
-            try {
-                staticFiles = fs.readdirSync(path.join(BLOG_DIRECTORIE, dirent.name, 'static'))
-            } catch {
-                staticFiles = []
-            }
-
-            return {
-                content: matterResult.content,
-                slug: dirent.name,
-                ...matterResultData,
-                fileName: dirent.name,
-                staticFiles: staticFiles,
-            }
-        })
-})()
-
 const DIARY_DIRECTORIE = path.join(process.cwd(), 'posts/diary')
-const ALL_DIARY_POSTS = (() => {
-    const allDirents = fs.readdirSync(DIARY_DIRECTORIE, { withFileTypes: true })
+
+function readPostsFromDir(dir: string) {
+    const allDirents = fs.readdirSync(dir, { withFileTypes: true })
 
     return allDirents
         .filter(dirent => dirent.isDirectory())
         .map(dirent => {
-            const fullPath = path.join(DIARY_DIRECTORIE, dirent.name, 'index.md')
+            const fullPath = path.join(dir, dirent.name, 'index.md')
             const fileContent = fs.readFileSync(fullPath, 'utf8')
             const matterResult = matter(fileContent)
             const matterResultData = matterResult.data as MatterResult['data']
 
             let staticFiles: string[]
             try {
-                staticFiles = fs.readdirSync(path.join(DIARY_DIRECTORIE, dirent.name, 'static'))
+                staticFiles = fs.readdirSync(path.join(dir, dirent.name, 'static'))
             } catch {
                 staticFiles = []
             }
@@ -95,23 +68,23 @@ const ALL_DIARY_POSTS = (() => {
                 staticFiles: staticFiles,
             }
         })
-})()
+}
 
-export const ALL_POSTS = (() => {
-    return ALL_DIARY_POSTS.concat(ALL_BLOG_POSTS)
-})()
+export function getAllPosts() {
+    return readPostsFromDir(DIARY_DIRECTORIE).concat(readPostsFromDir(BLOG_DIRECTORIE))
+}
 
 export function getSortedPostsData(type = '') {
     let posts
     switch (type) {
         case 'blog':
-            posts = ALL_BLOG_POSTS
+            posts = readPostsFromDir(BLOG_DIRECTORIE)
             break
         case 'diary':
-            posts = ALL_DIARY_POSTS
+            posts = readPostsFromDir(DIARY_DIRECTORIE)
             break
         default:
-            posts = ALL_POSTS
+            posts = getAllPosts()
             break
     }
     return posts.sort((a, b) => {
@@ -127,7 +100,7 @@ export function getSortedPostsData(type = '') {
 
 // slugからpostを取得する
 export async function getPostData(slug: string): Promise<Post> {
-    const post = ALL_POSTS.find(post => slug === post.slug) as Post
+    const post = getAllPosts().find(post => slug === post.slug) as Post
 
     const processedContent = await unified()
         .use(remarkParse)

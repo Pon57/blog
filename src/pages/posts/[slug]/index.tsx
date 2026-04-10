@@ -4,14 +4,14 @@ import Meta from '@/components/Meta'
 import { ParsedUrlQuery } from 'node:querystring'
 import fs from 'fs'
 import path from 'path'
-import { ALL_POSTS, getPostData, Post } from '@/lib/posts'
+import { getAllPosts, getPostData, Post } from '@/lib/posts'
 
 interface Param extends ParsedUrlQuery {
     slug: string
 }
 
 export const getStaticPaths: GetStaticPaths<Param> = async () => {
-    const paths = ALL_POSTS.map(post => {
+    const paths = getAllPosts().map(post => {
         return { params: { slug: post.slug } as Param }
     })
 

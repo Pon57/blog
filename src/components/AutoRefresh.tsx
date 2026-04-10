@@ -2,7 +2,7 @@
 
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -16,8 +16,10 @@ if (process.env.NODE_ENV === 'development') {
             const ws = new WebSocket('ws://localhost:3201')
             ws.onmessage = event => {
                 if (event.data === 'refresh') {
-                    setTimeout(() => {
-                        router.refresh()
+                    setTimeout(async () => {
+                        await router.replace(router.asPath, undefined, { scroll: false })
+                        const twttr = (window as typeof window & { twttr?: { widgets?: { load?: () => void } } }).twttr
+                        twttr?.widgets?.load?.()
                     }, 500)
                 }
             }
