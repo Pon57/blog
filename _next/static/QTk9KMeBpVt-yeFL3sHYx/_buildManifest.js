@@ -1,21 +1,21 @@
 self.__BUILD_MANIFEST = {
   "/": [
-    "static/chunks/0ckfcm-8~dudh.js"
+    "static/chunks/06558i~r9s-2~.js"
   ],
   "/_error": [
     "static/chunks/003cmcs~85one.js"
   ],
   "/diaries": [
-    "static/chunks/0nfp-2v7d3ktj.js"
+    "static/chunks/0nxfs_wtcm6a4.js"
   ],
   "/disclaimer": [
     "static/chunks/0x5f6poz1d0mn.js"
   ],
   "/posts": [
-    "static/chunks/17x-r6xyps7es.js"
+    "static/chunks/0zk4sewu4844c.js"
   ],
   "/posts/[slug]": [
-    "static/chunks/0w52otq9suw6i.js"
+    "static/chunks/0n06mgkizi8ub.js"
   ],
   "/privacy-policy": [
     "static/chunks/0w8x8_z2j~s0h.js"
