@@ -23,12 +23,13 @@ export const getStaticPaths: GetStaticPaths<Param> = async () => {
 
 const copyStaticFiles = (post: Post) => {
     const sourceBaseDir = path.join(process.cwd(), 'posts', post.type, post.slug, 'static')
+    const destinationBaseDir = path.join(process.cwd(), 'public/posts', post.slug, 'static')
 
     post.staticFiles.forEach(staticFile => {
-        fs.mkdirSync(path.join(process.cwd(), 'public/posts/static'), { recursive: true })
+        fs.mkdirSync(destinationBaseDir, { recursive: true })
         fs.copyFileSync(
             path.join(sourceBaseDir, staticFile),
-            path.join(process.cwd(), 'public/posts/static', staticFile),
+            path.join(destinationBaseDir, staticFile),
         )
     })
 }
