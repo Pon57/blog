@@ -46,7 +46,10 @@ const PostPage = (post: InferGetStaticPropsType<typeof getStaticProps>) => {
         <>
             <Meta title={post.title} type="article" />
             <div className={styles.published}>{post.published}</div>
-            <h1 className={styles.title}>{post.title}</h1>
+            <h1 className={styles.title}>
+                {post.type === 'diary' && <span className={styles.badge}>日記</span>}
+                <span>{post.title}</span>
+            </h1>
             {post.tags && (
                 <p className={styles.tags}>
                     {post.tags.map(tag => (
