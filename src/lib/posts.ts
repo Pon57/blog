@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { unified } from 'unified'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeHighlight from 'rehype-highlight'
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
 import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
 import remark2rehype from 'remark-rehype'
@@ -14,6 +15,7 @@ import remarkImages from 'remark-images'
 import remarkParse from 'remark-parse'
 import rehypeTwitterEmbed from './rehype-twitter-embed'
 import rehypeYoutubeEmbed from './rehype-youtube-embed'
+import type { Options as RehypeSanitizeOptions } from 'rehype-sanitize'
 
 type MatterResult = {
     content: string
@@ -37,6 +39,47 @@ export type Post = {
 
 export type ApiResponse = {
     post: Post
+}
+
+const markdownHtmlSanitizeSchema: RehypeSanitizeOptions = {
+    ...defaultSchema,
+    tagNames: [...(defaultSchema.tagNames || []), 'iframe'],
+    attributes: {
+        ...defaultSchema.attributes,
+        a: [
+            ['className', 'twitter-embed-permalink', 'youtube-embed-fallback-link'],
+            ['aria-hidden', 'true'],
+            ...(defaultSchema.attributes?.a || []),
+            ['ariaHidden', 'true'],
+        ],
+        blockquote: [
+            ...(defaultSchema.attributes?.blockquote || []),
+            ['className', 'twitter-tweet'],
+            ['data-twitter-embed', 'true'],
+            ['dataTwitterEmbed', 'true'],
+        ],
+        div: [
+            ...(defaultSchema.attributes?.div || []),
+            ['className', 'youtube-embed', 'youtube-embed-frame'],
+            ['data-youtube-embed', 'true'],
+            ['dataYoutubeEmbed', 'true'],
+        ],
+        iframe: [
+            'allow',
+            ['allowFullScreen', true],
+            ['allowfullscreen', true],
+            ['frameBorder', '0'],
+            ['frameborder', '0'],
+            ['loading', 'lazy'],
+            'src',
+            'title',
+        ],
+        p: [...(defaultSchema.attributes?.p || []), ['className', 'youtube-embed-fallback']],
+    },
+    protocols: {
+        ...defaultSchema.protocols,
+        src: ['https'],
+    },
 }
 
 const BLOG_DIRECTORIE = path.join(process.cwd(), 'posts/blog')
@@ -111,6 +154,7 @@ export async function getPostData(slug: string): Promise<Post> {
         .use(remark2rehype)
         .use(rehypeTwitterEmbed)
         .use(rehypeYoutubeEmbed)
+        .use(rehypeSanitize, markdownHtmlSanitizeSchema)
         .use(rehypeExternalLinks)
         .use(rehypeHighlight)
         .use(rehypeSlug)
