@@ -27,9 +27,12 @@ type MatterResult = {
     }
 }
 
+type PostType = 'blog' | 'diary'
+
 export type Post = {
     content: string
     slug: string
+    type: PostType
     title: string
     published: string
     publishedIndex: number
@@ -85,7 +88,7 @@ const markdownHtmlSanitizeSchema: RehypeSanitizeOptions = {
 const BLOG_DIRECTORIE = path.join(process.cwd(), 'posts/blog')
 const DIARY_DIRECTORIE = path.join(process.cwd(), 'posts/diary')
 
-function readPostsFromDir(dir: string) {
+function readPostsFromDir(dir: string, type: PostType) {
     const allDirents = fs.readdirSync(dir, { withFileTypes: true })
 
     return allDirents
@@ -106,6 +109,7 @@ function readPostsFromDir(dir: string) {
             return {
                 content: matterResult.content,
                 slug: dirent.name,
+                type,
                 ...matterResultData,
                 fileName: dirent.name,
                 staticFiles: staticFiles,
@@ -114,17 +118,19 @@ function readPostsFromDir(dir: string) {
 }
 
 export function getAllPosts() {
-    return readPostsFromDir(DIARY_DIRECTORIE).concat(readPostsFromDir(BLOG_DIRECTORIE))
+    return readPostsFromDir(DIARY_DIRECTORIE, 'diary').concat(
+        readPostsFromDir(BLOG_DIRECTORIE, 'blog'),
+    )
 }
 
 export function getSortedPostsData(type = '') {
     let posts
     switch (type) {
         case 'blog':
-            posts = readPostsFromDir(BLOG_DIRECTORIE)
+            posts = readPostsFromDir(BLOG_DIRECTORIE, 'blog')
             break
         case 'diary':
-            posts = readPostsFromDir(DIARY_DIRECTORIE)
+            posts = readPostsFromDir(DIARY_DIRECTORIE, 'diary')
             break
         default:
             posts = getAllPosts()

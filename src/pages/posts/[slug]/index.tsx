@@ -21,11 +21,13 @@ export const getStaticPaths: GetStaticPaths<Param> = async () => {
     }
 }
 
-const copyStaticFiles = (slug: string, staticFiles: string[]) => {
-    staticFiles.forEach(staticFile => {
+const copyStaticFiles = (post: Post) => {
+    const sourceBaseDir = path.join(process.cwd(), 'posts', post.type, post.slug, 'static')
+
+    post.staticFiles.forEach(staticFile => {
         fs.mkdirSync(path.join(process.cwd(), 'public/posts/static'), { recursive: true })
         fs.copyFileSync(
-            path.join(process.cwd(), 'posts/blog', slug, 'static', staticFile),
+            path.join(sourceBaseDir, staticFile),
             path.join(process.cwd(), 'public/posts/static', staticFile),
         )
     })
@@ -34,7 +36,7 @@ const copyStaticFiles = (slug: string, staticFiles: string[]) => {
 export const getStaticProps: GetStaticProps<Post, Param> = async context => {
     const slug = (context.params || {}).slug as string
     const data = await getPostData(slug)
-    copyStaticFiles(slug, data.staticFiles)
+    copyStaticFiles(data)
     return { props: data }
 }
 
