@@ -14,17 +14,24 @@ if (process.env.NODE_ENV === 'development') {
 
         useEffect(() => {
             const ws = new WebSocket('ws://localhost:3201')
+            let timeoutId: ReturnType<typeof setTimeout> | undefined
             ws.onmessage = event => {
                 if (event.data === 'refresh') {
-                    setTimeout(async () => {
+                    if (timeoutId) clearTimeout(timeoutId)
+                    timeoutId = setTimeout(async () => {
                         await router.replace(router.asPath, undefined, { scroll: false })
-                        const twttr = (window as typeof window & { twttr?: { widgets?: { load?: () => void } } }).twttr
+                        const twttr = (
+                            window as typeof window & {
+                                twttr?: { widgets?: { load?: () => void } }
+                            }
+                        ).twttr
                         twttr?.widgets?.load?.()
                     }, 500)
                 }
             }
             return () => {
                 ws.close()
+                if (timeoutId) clearTimeout(timeoutId)
             }
         }, [router])
         return children

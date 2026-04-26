@@ -35,8 +35,8 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                 </ul>
             </div>
             <div>
-                {posts.map((post, index) => (
-                    <article className={styles.article} key={index}>
+                {posts.map(post => (
+                    <article className={styles.article} key={post.slug}>
                         <Link href="/posts/[slug]" as={`/posts/${post.slug}`}>
                             <div>
                                 <h1 className={styles.title}>{post.title}</h1>
@@ -44,8 +44,8 @@ const Index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 <div className={styles.meta}>
                                     {post.tags && (
                                         <p className={styles.tags}>
-                                            {post.tags?.map((tag, index) => (
-                                                <span className={styles.tag} key={index}>
+                                            {post.tags?.map(tag => (
+                                                <span className={styles.tag} key={tag}>
                                                     {tag}
                                                 </span>
                                             ))}

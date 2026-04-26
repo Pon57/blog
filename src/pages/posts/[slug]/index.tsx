@@ -46,14 +46,19 @@ const PostPage = (post: InferGetStaticPropsType<typeof getStaticProps>) => {
             <h1 className={styles.title}>{post.title}</h1>
             {post.tags && (
                 <p className={styles.tags}>
-                    {post.tags.map((tag, index) => (
-                        <span className={styles.tag} key={index}>
+                    {post.tags.map(tag => (
+                        <span className={styles.tag} key={tag}>
                             {tag}
                         </span>
                     ))}
                 </p>
             )}
-            <div className={styles.content} dangerouslySetInnerHTML={{ __html: post.content }} />
+            <div
+                className={styles.content}
+                // post.content は markdown→HTML 変換済みの自前 build 出力
+                // eslint-disable-next-line @eslint-react/dom-no-dangerously-set-innerhtml
+                dangerouslySetInnerHTML={{ __html: post.content }}
+            />
         </>
     )
 }
