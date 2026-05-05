@@ -3,5 +3,7 @@ module.exports = {
     reactStrictMode: true,
     trailingSlash: true,
     typedRoutes: true,
-    turbopack: {},
+    turbopack: {
+        root: __dirname,
+    },
 }
