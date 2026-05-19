@@ -30,7 +30,7 @@
         "remark-rehype": "11.1.2",
         "tsx": "4.21.0",
         "unified": "11.0.5",
-        "ws": "8.20.0"
+        "ws": "8.20.1"
     },
     "devDependencies": {
         "@eslint-react/eslint-plugin": "5.7.2",
