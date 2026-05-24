@@ -52,12 +52,5 @@
         "typescript": "6.0.3",
         "typescript-eslint": "8.59.2"
     },
-    "packageManager": "pnpm@11.0.9",
-    "pnpm": {
-        "allowBuilds": {
-            "esbuild": true,
-            "sharp": true
-        },
-        "minimumReleaseAge": "14 days"
-    }
+    "packageManager": "pnpm@11.0.9"
 }
