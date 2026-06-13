@@ -10,7 +10,7 @@
         "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css,scss}'"
     },
     "dependencies": {
-        "concurrently": "9.2.1",
+        "concurrently": "10.0.0",
         "gray-matter": "4.0.3",
         "highlight.js": "11.11.1",
         "minireset.css": "0.0.7",
