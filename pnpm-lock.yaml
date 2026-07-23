@@ -15,7 +15,7 @@ overrides:
   postcss: 8.5.16
   sharp: 0.35.3
   shell-quote: 1.9.0
-  uuid: 13.0.1
+  uuid: 13.0.2
 
 importers:
 
@@ -2237,8 +2237,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  uuid@13.0.1:
-    resolution: {integrity: sha512-9ezox2roIft6ExBVTVqibSd5dc5/47Sw/uY6b4SjQUT2TzQ0tltNquWA46y4xPQmdZYqvnio22SgWd41M86+jw==}
+  uuid@13.0.2:
+    resolution: {integrity: sha512-vzi9uRZ926x4XV73S/4qQaTwPXM2JBj6/6lI/byHH1jOpCzb0zDbfytgA9LcN/hzb2l7WQSQnxITOVx5un/wGw==}
     hasBin: true
 
   vfile-message@4.0.3:
@@ -2941,7 +2941,7 @@ snapshots:
       debug: 4.4.3
       espree: 11.2.0
       type-fest: 5.6.0
-      uuid: 13.0.1
+      uuid: 13.0.2
     transitivePeerDependencies:
       - supports-color
 
@@ -3081,7 +3081,7 @@ snapshots:
 
   '@types/uuid@11.0.0':
     dependencies:
-      uuid: 13.0.1
+      uuid: 13.0.2
 
   '@types/whatwg-mimetype@5.0.0': {}
 
@@ -4715,7 +4715,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  uuid@13.0.1: {}
+  uuid@13.0.2: {}
 
   vfile-message@4.0.3:
     dependencies:
