@@ -204,7 +204,7 @@ function createEmbedElement(reference: YoutubeReference, href: string): Element 
         properties: {
             href,
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: ['noopener', 'noreferrer'],
             className: ['youtube-embed-fallback-link'],
         },
         children: [
@@ -245,17 +245,7 @@ function createEmbedElement(reference: YoutubeReference, href: string): Element 
 }
 
 function getHref(properties: Properties | undefined): string | undefined {
-    if (!properties) {
-        return undefined
-    }
-    const { href } = properties
-    if (typeof href === 'string') {
-        return href
-    }
-    if (Array.isArray(href) && href.length > 0) {
-        return String(href[0])
-    }
-    return undefined
+    return typeof properties?.href === 'string' ? properties.href : undefined
 }
 
 function isParent(node: Node): node is Parent {

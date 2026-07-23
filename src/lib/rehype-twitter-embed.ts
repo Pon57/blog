@@ -137,17 +137,7 @@ function markAsTweet(blockquote: Element) {
 }
 
 function getHref(properties: Properties | undefined): string | undefined {
-    if (!properties) {
-        return undefined
-    }
-    const { href } = properties
-    if (typeof href === 'string') {
-        return href
-    }
-    if (Array.isArray(href) && href.length > 0) {
-        return String(href[0])
-    }
-    return undefined
+    return typeof properties?.href === 'string' ? properties.href : undefined
 }
 
 function normalizeUrl(url: string): string {
@@ -155,17 +145,7 @@ function normalizeUrl(url: string): string {
 }
 
 function mergeClassNames(current: Properties['className'], className: string): string[] {
-    const normalized = new Set<string>()
-
-    if (typeof current === 'string') {
-        current
-            .split(/\s+/)
-            .filter(Boolean)
-            .forEach(token => normalized.add(token))
-    } else if (Array.isArray(current)) {
-        current.filter(token => typeof token === 'string').forEach(token => normalized.add(token))
-    }
-
+    const normalized = new Set(current ?? [])
     normalized.add(className)
 
     return Array.from(normalized)
