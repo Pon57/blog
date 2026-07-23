@@ -11,12 +11,30 @@
     "prConcurrentLimit": 5,
     "dependencyDashboard": true,
     "minimumReleaseAge": "14 days",
+    "vulnerabilityAlerts": {
+        "enabled": false
+    },
     "packageRules": [
         {
             "matchUpdateTypes": [
                 "patch"
             ],
             "automerge": true
+        },
+        {
+            "matchDepTypes": [
+                "pnpm-workspace.overrides"
+            ],
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "enabled": false
+        },
+        {
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "dependencyDashboardApproval": true
         }
     ],
     "internalChecksFilter": "strict"

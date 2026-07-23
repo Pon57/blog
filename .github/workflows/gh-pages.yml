@@ -23,8 +23,8 @@ jobs:
             - name: install
               run: pnpm install --frozen-lockfile
 
-            - name: build
-              run: pnpm build
+            - name: verify
+              run: pnpm verify
 
             - name: add nojekyll
               run: touch ./out/.nojekyll
