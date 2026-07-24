@@ -29,12 +29,6 @@
                 "major"
             ],
             "enabled": false
-        },
-        {
-            "matchUpdateTypes": [
-                "major"
-            ],
-            "dependencyDashboardApproval": true
         }
     ],
     "internalChecksFilter": "strict"
