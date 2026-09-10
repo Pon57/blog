@@ -25,6 +25,6 @@ overrides:
   'picomatch@2': 2.3.2
   'picomatch@4': 4.0.7
   postcss: 8.5.26
-  sharp: 0.35.3
+  sharp: 0.35.4
   shell-quote: 1.10.0
   uuid: 13.0.2
