@@ -24,7 +24,7 @@ overrides:
   'js-yaml@4': 4.3.2
   'picomatch@2': 2.3.2
   'picomatch@4': 4.0.7
-  postcss: 8.5.26
+  postcss: 8.5.28
   sharp: 0.35.4
   shell-quote: 1.10.0
   uuid: 13.0.2
