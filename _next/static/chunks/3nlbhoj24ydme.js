@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/diaries", [
+  "static/chunks/3_2hfw-d0uq-1.js",
+  "static/chunks/0w0kqgi-rz62n.js",
+  "static/chunks/3s9zy9zwehdmo.js",
+  "static/chunks/2dh00ju7zna_n.js",
+  "static/chunks/2i_hxee06ohdd.css",
+  "static/chunks/turbopack-0gswrxi_tppi8.js"
+])
