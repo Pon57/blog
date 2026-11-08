@@ -4,6 +4,7 @@
     labels: ['Renovate'],
     prHourlyLimit: 0,
     prConcurrentLimit: 5,
+    rebaseWhen: 'behind-base-branch',
     dependencyDashboard: true,
     minimumReleaseAge: '14 days',
     vulnerabilityAlerts: {
