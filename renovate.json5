@@ -8,7 +8,7 @@
     dependencyDashboard: true,
     minimumReleaseAge: '14 days',
     vulnerabilityAlerts: {
-        enabled: false,
+        enabled: true,
     },
     packageRules: [
         {
