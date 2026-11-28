@@ -1,25 +1,27 @@
 {
-    $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-    extends: ['config:recommended', ':timezone(Asia/Tokyo)'],
-    labels: ['Renovate'],
+    $schema: "https://docs.renovatebot.com/renovate-schema.json",
+    extends: ["config:recommended", ":timezone(Asia/Tokyo)"],
+    labels: ["Renovate"],
     prHourlyLimit: 0,
     prConcurrentLimit: 5,
-    rebaseWhen: 'behind-base-branch',
-    dependencyDashboard: true,
-    minimumReleaseAge: '14 days',
+    rebaseWhen: "behind-base-branch",
+    dependencyDashboard: {
+        enabled: true,
+    },
+    minimumReleaseAge: "14 days",
     vulnerabilityAlerts: {
         enabled: true,
     },
     packageRules: [
         {
-            matchUpdateTypes: ['patch'],
+            matchUpdateTypes: ["patch"],
             automerge: true,
         },
         {
-            matchDepTypes: ['pnpm-workspace.overrides'],
-            matchUpdateTypes: ['major'],
+            matchDepTypes: ["pnpm-workspace.overrides"],
+            matchUpdateTypes: ["major"],
             enabled: false,
         },
     ],
-    internalChecksFilter: 'strict',
+    internalChecksFilter: "strict",
 }
